@@ -2,4 +2,4 @@
 
 Operational scripts for experiments and batches.
 
-- `run/`: runnable experiment scripts (single runs, ProofBench runs, ProofBench grading, IMO-level batches).
+- `run/`: runnable experiment scripts (single runs, ProofBench/IMO-Bench runs, ProofAutoGrader-based grading, IMO-level batches).

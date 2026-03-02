@@ -1,6 +1,6 @@
 # ProofBench Final Release (PB-Advanced 001-030)
 
-This directory contains the finalized Momus pipeline outputs prepared for open-source release as a single unified run package.
+This directory contains the finalized Momus pipeline outputs prepared for open-source release as a single unified run package. The grading files use ProofAutoGrader from IMO-Bench ([imobench.github.io](https://imobench.github.io/)).
 
 ## Contents
 

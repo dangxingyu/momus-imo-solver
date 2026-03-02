@@ -2,7 +2,7 @@
 
 Official implementation of the paper **"Escaping the Cognitive Well: Efficient Competition Math with Off-the-Shelf Models"** ([arXiv:2602.16793](https://arxiv.org/abs/2602.16793)).
 
-This repository contains the Momus inference pipeline for IMO-style proof problems, plus a Huang-Yang baseline agent and reproducible experiment configs.
+This repository contains the Momus inference pipeline for IMO-style proof problems, plus the Huang-Yang pipeline from previous work ([arXiv:2507.15855](https://arxiv.org/abs/2507.15855)) and reproducible experiment configs.
 
 ## Quick Start
 
@@ -41,12 +41,14 @@ imo-parallel imo24SL/A1.md -n 4 \
 ## Agents
 
 - `momus`: main paper pipeline.
-- `huang_yang`: baseline solver pipeline.
+- `huang_yang`: pipeline from previous work ([arXiv:2507.15855](https://arxiv.org/abs/2507.15855)).
+- `proof_autograder`: ProofAutoGrader from IMO-Bench ([imobench.github.io](https://imobench.github.io/)).
 
 ## Configs
 
 - `imo_solver/config/momus_config.yaml`: default Momus config.
-- `imo_solver/config/huang_yang_config.yaml`: baseline config.
+- `imo_solver/config/huang_yang_config.yaml`: config for the Huang-Yang pipeline from previous work.
+- `imo_solver/config/proof_autograder_config.yaml`: config for ProofAutoGrader (IMO-Bench style 0-7 proof grading).
 - `imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml`: Gemini 3 Flash example.
 - `imo_solver/config/momus_exp_gemini3_pro_depth3_config.yaml`: Gemini 3 Pro example.
 - `imo_solver/config/momus_exp_gemini25pro_native_config.yaml`: Gemini 2.5 Pro native example.
@@ -54,7 +56,7 @@ imo-parallel imo24SL/A1.md -n 4 \
 
 ## Included Dataset
 
-- `proofbench.csv` is included at repository root for ProofBench-based scripts.
+- `proofbench.csv` is included at repository root for ProofBench-based scripts (dataset from IMO-Bench: [imobench.github.io](https://imobench.github.io/)).
 
 ## Final Released Results
 
@@ -63,8 +65,8 @@ imo-parallel imo24SL/A1.md -n 4 \
 - Per-problem artifacts include `solution.txt`, solver logs, API logs, metadata, and `proof_autograder_result.json`.
 - A provenance table is provided at:
   - `release_results/proofbench_momus_final_001_030/manifest.csv`
-- Summary files are under:
-  - `release_results/proofbench_momus_final_001_030/summaries/`
+- Unified run summary is at:
+  - `release_results/proofbench_momus_final_001_030/run_summary.json`
 
 ## Useful Scripts
 
