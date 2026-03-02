@@ -1,0 +1,38 @@
+**The Problem:**
+Let $O, G$ be the circumcenter and centroid of a non-isosceles triangle $ABC$. $H$ is the altitude foot from $A$ to $BC$, $M$ is the midpoint of $BC$. For $X$ on $OG$, let $BX \cap AC = P$ and $CX \cap AB = Q$. Let $H_1$ be the foot of the perpendicular from $P$ to $AB$, and $K$ be the reflection of $A$ about $H_1$. Let $T = \odot(KPQ) \cap \odot(PHM)$. Prove that as $X$ moves along $OG$, $T$ moves along a fixed circle.
+
+**Proof:**
+
+**1. Definition of the Fixed Point $S$ and its Power**
+Let $S$ be the point on the line $BC$ such that $(B, C; H, S) = -1$. Using coordinates on line $BC$ where $M$ is the origin $0$, let $B = -a/2$ and $C = a/2$. Let $H$ be at coordinate $h$ and $S$ at coordinate $s$. The harmonic condition $\frac{h - (-a/2)}{h - a/2} = -\frac{s - (-a/2)}{s - a/2}$ simplifies to $sh = (a/2)^2$.
+Define the constant $k = \vec{SH} \cdot \vec{SM}$. In our coordinates:
+$$k = (h-s)(0-s) = s^2 - sh = s^2 - (a/2)^2$$
+Note that $k$ is also the power of point $S$ with respect to the circumcircle of triangle $ABC$, which is $(s - a/2)(s + a/2) = s^2 - (a/2)^2$.
+Any circle passing through $H$ and $M$ has $S$ as a point on its secant line $BC$. The power of $S$ with respect to any such circle, including $\omega_2 = \odot(PHM)$, is $\vec{SH} \cdot \vec{SM} = k$. Thus, $\text{Pow}_{\omega_2}(S) = k$.
+
+**2. The Power of $S$ with respect to $\odot(KPQ)$**
+Let $X = (u,v,w)$ in barycentric coordinates. Since $X$ lies on the Euler line $OG$, it satisfies:
+$$u E_A + v E_B + w E_C = 0$$
+where $E_A = (b^2-c^2)(b^2+c^2-a^2)$, $E_B = (c^2-a^2)(c^2+a^2-b^2)$, and $E_C = (a^2-b^2)(a^2+b^2-c^2)$.
+The point $P$ is $(u, 0, w)$ and $Q$ is $(u, v, 0)$. In $\triangle APQ$, the length $AQ = \frac{v}{u+v}c$ and $AP = \frac{w}{u+w}b$.
+The point $H_1$ is the projection of $P$ on $AB$, so $AH_1 = AP \cos A$. Since $K$ is the reflection of $A$ in $H_1$, $AK = 2 AH_1 = 2 AP \cos A = \frac{w}{u+w} (2b \cos A)$.
+Using the law of cosines, $2b \cos A = \frac{b^2+c^2-a^2}{c}$. Thus $AK = \frac{w}{u+w} \frac{b^2+c^2-a^2}{c}$.
+Let $\omega_1 = \odot(KPQ)$. The power of $A$ with respect to $\omega_1$ is:
+$$l = \vec{AQ} \cdot \vec{AK} = \left(\frac{v}{u+v}c\right) \left(\frac{w}{u+w} \frac{b^2+c^2-a^2}{c}\right) = \frac{vw(b^2+c^2-a^2)}{(u+v)(u+w)}$$
+Using the general circle equation $-a^2 yz - b^2 zx - c^2 xy + (x+y+z)(lx + my + nz) = 0$, and the facts that $Q(u,v,0)$ and $P(u,0,w)$ lie on $\omega_1$, we solve for $m$ and $n$:
+$$m = \frac{c^2 u}{u+v} - \frac{u}{v}l, \quad n = \frac{b^2 u}{u+w} - \frac{u}{w}l$$
+The point $S(0, y_s, z_s)$ has normalized coordinates $y_s = \frac{a^2+b^2-c^2}{2(b^2-c^2)}$ and $z_s = \frac{a^2+c^2-b^2}{2(c^2-b^2)}$.
+The power of $S$ with respect to $\omega_1$ is $\text{Pow}_{\omega_1}(S) = -a^2 y_s z_s + y_s m + z_s n$.
+Substituting $m$ and $n$ and grouping terms by $u, v, w$:
+$$\text{Pow}_{\omega_1}(S) = -a^2 y_s z_s + \frac{u}{(u+v)(u+w)} \left[ u(y_s c^2 + z_s b^2) + v(z_s a^2 - z_s c^2) + w(y_s a^2 - y_s b^2) \right]$$
+Substituting the values of $y_s$ and $z_s$, the term in the brackets is $\frac{1}{2(b^2-c^2)} [ u E_A + v E_B + w E_C ]$.
+Since $X$ is on the Euler line, this term is zero.
+Therefore, $\text{Pow}_{\omega_1}(S) = -a^2 y_s z_s = s^2 - (a/2)^2 = k$.
+
+**3. Conclusion of Locus**
+Since $\text{Pow}_{\omega_1}(S) = \text{Pow}_{\omega_2}(S) = k$, the point $S$ has equal power with respect to both circles. Thus $S$ lies on their radical axis.
+The circles $\omega_1$ and $\omega_2$ intersect at $P$ and $T$. Their radical axis is the line $PT$. If the circles are tangent, the radical axis is the common tangent at $P$. In either case, $S, P,$ and $T$ are collinear.
+The power of $S$ with respect to these circles is $\vec{SP} \cdot \vec{ST} = k$.
+This identifies $T$ as the image of $P$ under an inversion centered at $S$ with power $k$.
+As $X$ moves along the Euler line $OG$, the point $P = BX \cap AC$ moves along the fixed line $AC$.
+The image of a line under inversion is a circle passing through the center of inversion. Since $S$ is not on $AC$ (as the triangle is non-isosceles), the locus of $T$ is a fixed circle passing through $S$. Q.E.D.

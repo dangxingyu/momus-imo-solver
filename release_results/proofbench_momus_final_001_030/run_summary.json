@@ -1,0 +1,553 @@
+{
+  "run_name": "proofbench_momus_final_001_030",
+  "range": {
+    "start": 1,
+    "end": 30
+  },
+  "graded_records": 30,
+  "scored_records": 30,
+  "pass_count_ge_6": 20,
+  "avg_points": 4.8,
+  "results": [
+    {
+      "problem_id": "PB-Advanced-001",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 6120,
+        "output_tokens": 1097,
+        "total_tokens": 12919,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-001/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-001/solution.txt",
+      "graded_at": "2026-03-02T14:52:44.094671"
+    },
+    {
+      "problem_id": "PB-Advanced-002",
+      "status": "graded",
+      "points": 6,
+      "points_text": "6 out of 7",
+      "normalized_score": 0.8571428571428571,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 11525,
+        "output_tokens": 1296,
+        "total_tokens": 18509,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-002/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-002/solution.txt",
+      "graded_at": "2026-03-02T14:54:34.121440"
+    },
+    {
+      "problem_id": "PB-Advanced-003",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 9190,
+        "output_tokens": 1296,
+        "total_tokens": 16466,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-003/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-003/solution.txt",
+      "graded_at": "2026-03-02T14:56:05.969884"
+    },
+    {
+      "problem_id": "PB-Advanced-004",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 6425,
+        "output_tokens": 1137,
+        "total_tokens": 13501,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-004/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-004/solution.txt",
+      "graded_at": "2026-03-02T14:57:06.202169"
+    },
+    {
+      "problem_id": "PB-Advanced-005",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 14673,
+        "output_tokens": 1329,
+        "total_tokens": 22168,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-005/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-005/solution.txt",
+      "graded_at": "2026-03-02T14:59:10.364291"
+    },
+    {
+      "problem_id": "PB-Advanced-006",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 14471,
+        "output_tokens": 1572,
+        "total_tokens": 20324,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-006/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-006/solution.txt",
+      "graded_at": "2026-03-02T15:01:23.138708"
+    },
+    {
+      "problem_id": "PB-Advanced-007",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 5888,
+        "output_tokens": 1491,
+        "total_tokens": 11353,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-007/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-007/solution.txt",
+      "graded_at": "2026-03-02T15:02:20.003640"
+    },
+    {
+      "problem_id": "PB-Advanced-008",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 10935,
+        "output_tokens": 1377,
+        "total_tokens": 18058,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-008/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-008/solution.txt",
+      "graded_at": "2026-03-02T15:03:56.648244"
+    },
+    {
+      "problem_id": "PB-Advanced-009",
+      "status": "graded",
+      "points": 1,
+      "points_text": "1 out of 7",
+      "normalized_score": 0.14285714285714285,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 17078,
+        "output_tokens": 1575,
+        "total_tokens": 22774,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-009/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-009/solution.txt",
+      "graded_at": "2026-03-02T15:06:20.795569"
+    },
+    {
+      "problem_id": "PB-Advanced-010",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 22741,
+        "output_tokens": 1780,
+        "total_tokens": 28469,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-010/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-010/solution.txt",
+      "graded_at": "2026-03-02T15:09:24.475044"
+    },
+    {
+      "problem_id": "PB-Advanced-011",
+      "status": "graded",
+      "points": 1,
+      "points_text": "1 out of 7",
+      "normalized_score": 0.14285714285714285,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 7570,
+        "output_tokens": 1214,
+        "total_tokens": 13475,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-011/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-011/solution.txt",
+      "graded_at": "2026-03-02T15:10:31.002897"
+    },
+    {
+      "problem_id": "PB-Advanced-012",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 9246,
+        "output_tokens": 1397,
+        "total_tokens": 19445,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-012/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-012/solution.txt",
+      "graded_at": "2026-03-02T15:11:52.376942"
+    },
+    {
+      "problem_id": "PB-Advanced-013",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 11236,
+        "output_tokens": 1155,
+        "total_tokens": 17948,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-013/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-013/solution.txt",
+      "graded_at": "2026-03-02T15:13:25.520067"
+    },
+    {
+      "problem_id": "PB-Advanced-014",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 6086,
+        "output_tokens": 1458,
+        "total_tokens": 12617,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-014/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-014/solution.txt",
+      "graded_at": "2026-03-02T15:14:20.875832"
+    },
+    {
+      "problem_id": "PB-Advanced-015",
+      "status": "graded",
+      "points": 2,
+      "points_text": "2 out of 7",
+      "normalized_score": 0.2857142857142857,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 9601,
+        "output_tokens": 1367,
+        "total_tokens": 17029,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-015/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-015/solution.txt",
+      "graded_at": "2026-03-02T15:15:46.763859"
+    },
+    {
+      "problem_id": "PB-Advanced-016",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 17961,
+        "output_tokens": 1730,
+        "total_tokens": 23071,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-016/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-016/solution.txt",
+      "graded_at": "2026-03-02T02:21:40.752724"
+    },
+    {
+      "problem_id": "PB-Advanced-017",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 7935,
+        "output_tokens": 1801,
+        "total_tokens": 16570,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-017/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-017/solution.txt",
+      "graded_at": "2026-03-02T02:22:52.957374"
+    },
+    {
+      "problem_id": "PB-Advanced-018",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 3761,
+        "output_tokens": 966,
+        "total_tokens": 10116,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-018/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-018/solution.txt",
+      "graded_at": "2026-03-02T02:23:31.628084"
+    },
+    {
+      "problem_id": "PB-Advanced-019",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 7451,
+        "output_tokens": 1102,
+        "total_tokens": 13598,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-019/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-019/solution.txt",
+      "graded_at": "2026-03-02T02:24:32.145906"
+    },
+    {
+      "problem_id": "PB-Advanced-020",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 5032,
+        "output_tokens": 1253,
+        "total_tokens": 11211,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-020/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-020/solution.txt",
+      "graded_at": "2026-03-02T02:25:20.833167"
+    },
+    {
+      "problem_id": "PB-Advanced-021",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 13374,
+        "output_tokens": 1506,
+        "total_tokens": 19095,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-021/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-021/solution.txt",
+      "graded_at": "2026-03-02T02:27:22.107521"
+    },
+    {
+      "problem_id": "PB-Advanced-022",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 13600,
+        "output_tokens": 1142,
+        "total_tokens": 19791,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-022/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-022/solution.txt",
+      "graded_at": "2026-03-02T02:29:11.568892"
+    },
+    {
+      "problem_id": "PB-Advanced-023",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 5879,
+        "output_tokens": 1042,
+        "total_tokens": 11465,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-023/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-023/solution.txt",
+      "graded_at": "2026-03-02T02:30:08.365122"
+    },
+    {
+      "problem_id": "PB-Advanced-024",
+      "status": "graded",
+      "points": 0,
+      "points_text": "0 out of 7",
+      "normalized_score": 0.0,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 5436,
+        "output_tokens": 1214,
+        "total_tokens": 14622,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-024/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-024/solution.txt",
+      "graded_at": "2026-03-02T02:31:03.814363"
+    },
+    {
+      "problem_id": "PB-Advanced-025",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 7259,
+        "output_tokens": 1266,
+        "total_tokens": 13117,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-025/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-025/solution.txt",
+      "graded_at": "2026-03-02T02:32:06.465711"
+    },
+    {
+      "problem_id": "PB-Advanced-026",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 4827,
+        "output_tokens": 1490,
+        "total_tokens": 11790,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-026/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-026/solution.txt",
+      "graded_at": "2026-03-02T02:32:56.626542"
+    },
+    {
+      "problem_id": "PB-Advanced-027",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 4605,
+        "output_tokens": 1270,
+        "total_tokens": 8897,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-027/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-027/solution.txt",
+      "graded_at": "2026-03-02T02:33:42.928325"
+    },
+    {
+      "problem_id": "PB-Advanced-028",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 8379,
+        "output_tokens": 1514,
+        "total_tokens": 14182,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-028/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-028/solution.txt",
+      "graded_at": "2026-03-02T02:34:57.172273"
+    },
+    {
+      "problem_id": "PB-Advanced-029",
+      "status": "graded",
+      "points": 7,
+      "points_text": "7 out of 7",
+      "normalized_score": 1.0,
+      "passed": true,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 5408,
+        "output_tokens": 1348,
+        "total_tokens": 11259,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-029/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-029/solution.txt",
+      "graded_at": "2026-03-02T02:35:46.842344"
+    },
+    {
+      "problem_id": "PB-Advanced-030",
+      "status": "graded",
+      "points": 1,
+      "points_text": "1 out of 7",
+      "normalized_score": 0.14285714285714285,
+      "passed": false,
+      "parse_source": "points_tag",
+      "usage": {
+        "thinking_tokens": 19391,
+        "output_tokens": 1458,
+        "total_tokens": 24696,
+        "provider": "gemini"
+      },
+      "result_file": "problems/PB-Advanced-030/proof_autograder_result.json",
+      "solution_file": "problems/PB-Advanced-030/solution.txt",
+      "graded_at": "2026-03-02T02:38:27.861282"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "problem_id": "PB-Advanced-021",
+  "config_path": "imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml",
+  "start_time": "2026-03-01T00:41:35.294875",
+  "status": "SolutionStatus.SOLVED",
+  "solved": true,
+  "error": null,
+  "duration_seconds": 4525.286193,
+  "end_time": "2026-03-01T01:57:00.581068"
+}

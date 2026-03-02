@@ -1,0 +1,59 @@
+**Problem:** Find all functions $f: \mathbb{Z} \rightarrow \mathbb{Z}$ such that $f(x - f(xy)) = f(x) f(1-y)$ for all $x, y \in \mathbb{Z}$.
+
+**Proof:**
+Let $P(x, y)$ be the assertion $f(x - f(xy)) = f(x) f(1-y)$.
+
+**Case 1: $f(0) = c \neq 0$.**
+$P(0, y) \implies f(-c) = c f(1-y)$. Since $c \neq 0$, $f(1-y) = \frac{f(-c)}{c}$ is a constant $k$.
+Substituting $f(x) = k$ into the original equation gives $k = k^2$, so $k \in \{0, 1\}$.
+Since $f(0) = c = k$ and $c \neq 0$, we must have $k=1$.
+Verification of $f(n) = 1$: $1 = 1 \cdot 1$ holds for all $n$.
+
+**Case 2: $f(0) = 0$.**
+$P(x, 1) \implies f(x - f(x)) = f(x) f(0) = 0$.
+$P(x, 0) \implies f(x - f(0)) = f(x) f(1) \implies f(x) = f(x) f(1)$.
+If $f(x) = 0$ for all $x$, the equation $0=0$ holds. This gives the solution $f(n) = 0$.
+If $f$ is not identically zero, there exists some $x$ with $f(x) \neq 0$, so $f(1) = 1$.
+
+Let $K = \{ z \in \mathbb{Z} : f(z) = 0 \}$. We know $0 \in K$ and $x - f(x) \in K$ for all $x$.
+$P(1, y) \implies f(1 - f(y)) = f(1-y)$.
+Let $k \in K$. Then $f(k) = 0$. From the identity $f(1 - f(y)) = f(1-y)$, substitute $y$ such that $y - f(y) = k$.
+Then $f(1 - (y-k)) = f(1-y)$, which simplifies to $f(1-y+k) = f(1-y)$.
+Since $1-y$ can take any value $z \in \mathbb{Z}$, we have $f(z+k) = f(z)$ for all $z \in \mathbb{Z}$ and $k \in K$.
+This implies $K$ is the set of periods of $f$. Since the sum or difference of two periods is a period, $K$ is an additive subgroup of $\mathbb{Z}$, hence $K = g\mathbb{Z}$ for some $g \geq 0$.
+
+**Subcase 2.1: $g = 0$.**
+$K = \{0\}$. Since $x - f(x) \in K$, we have $x - f(x) = 0$, so $f(n) = n$.
+Verification: $x - xy = x(1-y)$ holds for all $n$.
+
+**Subcase 2.2: $g > 0$.**
+$f$ is periodic with $g$. Thus $f(x)$ depends only on $x \pmod g$.
+Since $x - f(x) \in K = g\mathbb{Z}$, we have $f(x) \equiv x \pmod g$.
+Let $r_i$ be the value $f(i)$ for $i \in \{0, 1, \dots, g-1\}$. Then $r_i \equiv i \pmod g$.
+The original equation becomes $r_{i - r_{ij \pmod g} \pmod g} = r_i r_{1-j \pmod g}$.
+Substituting $1-j = m$ (so $j = 1-m$), and using $r_{ij} \equiv ij \pmod g$, we get:
+$r_{i - ij} \equiv r_{i(1-j)} \equiv r_{im} \pmod g$.
+The equation reduces to $r_{im \pmod g} = r_i r_m$ for all $i, m$.
+This means the image $\{r_0, \dots, r_{g-1}\}$ is closed under multiplication.
+For any $r_i$, the sequence of powers $r_i, r_i^2, r_i^3, \dots$ must be contained in the finite set of residues $Im(f)$.
+For an integer $r_i$, the set $\{r_i^n : n \in \mathbb{N}\}$ is finite if and only if $r_i \in \{0, 1, -1\}$.
+We check the possible values of $g$ based on $r_i \equiv i \pmod g$:
+- For $i=0$: $r_0 \in \{0, 1, -1\}$ and $r_0 \equiv 0 \pmod g$. Thus $r_0 = 0$.
+- For $i=1$: $r_1 \in \{0, 1, -1\}$ and $r_1 \equiv 1 \pmod g$. Since $f(1)=1$, $r_1 = 1$.
+- For any other $i$: $r_i \in \{0, 1, -1\}$ and $r_i \equiv i \pmod g$.
+If $g=1$: $f(n) = 0$ (already found).
+If $g=2$: $r_0=0, r_1=1$. $f(n) = 0$ if $n$ is even, $1$ if $n$ is odd.
+If $g=3$: $r_0=0, r_1=1, r_2 \equiv 2 \equiv -1 \pmod 3$. Thus $r_2 = -1$.
+$f(n) = 0$ if $n \equiv 0 \pmod 3$, $1$ if $n \equiv 1 \pmod 3$, $-1$ if $n \equiv 2 \pmod 3$.
+If $g \geq 4$: The residue $i=2$ must satisfy $r_2 \in \{0, 1, -1\}$.
+$2 \equiv 0 \pmod g \implies g|2$ (False for $g \geq 4$).
+$2 \equiv 1 \pmod g \implies g|1$ (False).
+$2 \equiv -1 \pmod g \implies g|3$ (Only $g=3$, False for $g \geq 4$).
+Thus $g$ can only be 1, 2, or 3.
+
+**Summary of Solutions:**
+1. $f(n) = 0$
+2. $f(n) = 1$
+3. $f(n) = n$
+4. $f(n) = \begin{cases} 0 & n \text{ even} \\ 1 & n \text{ odd} \end{cases}$
+5. $f(n) = \begin{cases} 0 & n \equiv 0 \pmod 3 \\ 1 & n \equiv 1 \pmod 3 \\ -1 & n \equiv 2 \pmod 3 \end{cases}$

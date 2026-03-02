@@ -1,0 +1,45 @@
+**The Problem:**
+Let $m$ and $n$ be positive integers with $m\ge n$. There are $m$ cupcakes of different flavors arranged around a circle and $n$ people. Each person $i$ assigns a score $s_{i,j} \ge 0$ to cupcake $j$. For each person $P_i$, there exists a partition of the cupcakes into $n$ contiguous groups such that each group has a score $\ge 1$. Prove it is possible to distribute the cupcakes to the $n$ people (one group each) so that each person $P_i$ receives a group of total score $\ge 1$ with respect to their own scores.
+
+**1. Construction of Continuous Measures**
+Represent the circle $S$ as the interval $[0, m]$ where $0$ and $m$ are identified. For each person $i \in \{1, \dots, n\}$ and cupcake $j \in \{1, \dots, m\}$, let $s_{i,j}$ be the score.
+For a fixed $\epsilon \in (0, 1)$, define a non-atomic measure $\mu_{i,\epsilon}$ with density $f_{i,\epsilon}(x)$:
+$$f_{i,\epsilon}(x) = \begin{cases} s_{i,j}/\epsilon & \text{if } x \in [j-1, j-1+\epsilon] \text{ for some } j \in \{1, \dots, m\} \\ 0 & \text{otherwise} \end{cases}$$
+The total measure for person $i$ is $\mu_{i,\epsilon}(S) = \sum_{j=1}^m \int_{j-1}^{j-1+\epsilon} \frac{s_{i,j}}{\epsilon} dx = \sum_{j=1}^m s_{i,j}$.
+From the problem hypothesis, person $i$ can partition the cupcakes into $n$ contiguous groups $G_{i,1}, \dots, G_{i,n}$ with sums $\ge 1$. Let the $k$-th group be cupcakes $\{a, a+1, \dots, b\}$. The arc $A_k = [a-1, b-1+\epsilon]$ has measure $\mu_{i,\epsilon}(A_k) = \sum_{j \in G_{i,k}} s_{i,j} \ge 1$. Thus, for each $i$, there exists a partition of $S$ into $n$ contiguous arcs with $\mu_{i,\epsilon} \ge 1$.
+
+**2. Lemma 1: The Continuous Partition Theorem**
+*Statement:* Let $\mu_1, \dots, \mu_n$ be non-atomic, non-negative measures on a circle $S$. If for each $i$, there is a partition of $S$ into $n$ contiguous arcs with $\mu_i \ge 1$, then there exists a partition $I_1, \dots, I_n$ of $S$ and a permutation $\sigma$ such that $\mu_{\sigma(k)}(I_k) \ge 1$ for all $k$.
+
+*Proof:* Fix a point $P \in S$. A partition is defined by $y = (y_1, \dots, y_n) \in \Delta^{n-1}$, where $y_k$ is the length of the $k$-th arc $I_k$ starting from $P$.
+Define closed sets $S_{i,j} = \{ y \in \Delta : \mu_i(I_j) \ge \mu_i(I_k) \text{ for all } k \}$.
+For each $i$, the sets $\{S_{i,j}\}_{j=1}^n$ cover $\Delta$. Consider a face $\Delta_J$ where $\sum_{j \in J} y_j = 1$. For $k \notin J$, $y_k = 0$, so $\mu_i(I_k) = 0$. Since person $i$ has a partition into $n$ pieces of size $\ge 1$, the total measure $\mu_i(S) \ge n$. Thus, the maximum measure $\max_k \mu_i(I_k)$ must be $\ge 1$. Consequently, the maximum cannot be at an index $k \notin J$. Thus $y \in \cup_{j \in J} S_{i,j}$.
+Gale's Lemma (1984) states that if these face conditions are met, there exists $y \in \Delta$ and a permutation $\sigma$ such that $y \in \cap_i S_{i, \sigma(i)}$.
+For this $y$, $\mu_i(I_{\sigma(i)}) \ge \mu_i(I_k)$ for all $k$.
+Summing over $k$: $n \cdot \mu_i(I_{\sigma(i)}) \ge \sum_k \mu_i(I_k) = \mu_i(S) \ge n$.
+Thus $\mu_i(I_{\sigma(i)}) \ge 1$. Re-indexing $\sigma$ gives the result.
+
+**3. The Limit Argument**
+For each $\epsilon_v = 1/v$ ($v \in \mathbb{N}$), Lemma 1 provides a partition $y^{(v)} = (y_1^{(v)}, \dots, y_n^{(v)})$ and a permutation $\sigma^{(v)}$.
+Since there are only $n!$ permutations, there is a permutation $\sigma$ that occurs infinitely often. Restrict to this subsequence.
+The simplex $\Delta^{n-1}$ is compact, so the sequence $y^{(v)}$ has a convergent subsequence. Let $y^*$ be the limit partition with arc boundaries $x_0^*, x_1^*, \dots, x_n^*$.
+For each $k$, let $I_k^{(v)}$ be the arcs for $\epsilon_v$. We have $\mu_{\sigma(k), \epsilon_v}(I_k^{(v)}) \ge 1$.
+
+**4. Discrete Distribution**
+Define the discrete groups $G_k$ as follows:
+Cupcake $j$ (represented by its score "spike" at $j-1$) belongs to group $G_k$ if its spike start $j-1$ is contained in the half-open arc $[x_{k-1}^*, x_k^*)$.
+Now we calculate the discrete score $S_{\sigma(k), G_k} = \sum_{j \in G_k} s_{\sigma(k), j}$.
+As $v \to \infty$, the measure $\mu_{\sigma(k), \epsilon_v}(I_k^{(v)})$ concentrates at the points $j-1$.
+Specifically, $\mu_{\sigma(k), \epsilon_v}(I_k^{(v)}) = \sum_{j=1}^m s_{\sigma(k), j} \cdot \text{Ratio}_{\epsilon_v}(j, k, v)$, where $\text{Ratio}$ is the proportion of the interval $[j-1, j-1+\epsilon_v]$ contained in $I_k^{(v)}$.
+As $v \to \infty$ and $\epsilon_v \to 0$:
+1. If $j-1 \in (x_{k-1}^*, x_k^*)$, then for sufficiently large $v$, the interval $[j-1, j-1+\epsilon_v]$ is entirely contained in $I_k^{(v)}$, so $\text{Ratio} \to 1$.
+2. If $j-1$ is not in $[x_{k-1}^*, x_k^*]$ and not at the boundaries, $\text{Ratio} \to 0$.
+3. If $j-1 = x_{k-1}^*$, the interval $[j-1, j-1+\epsilon_v]$ is the "start" of the arc $I_k$. Its Ratio is $\frac{\min(j-1+\epsilon_v, x_k^{(v)}) - \max(j-1, x_{k-1}^{(v)})}{\epsilon_v}$.
+In the limit, the sum of these ratios for a fixed $j$ across all $k$ is 1.
+Importantly, $\mu_{\sigma(k), \epsilon_v}(I_k^{(v)}) \le \sum_{j: [j-1, j-1+\epsilon_v] \cap I_k^{(v)} \neq \emptyset} s_{\sigma(k), j}$.
+As $v \to \infty$, the set of cupcakes $\{j : [j-1, j-1+\epsilon_v] \cap I_k^{(v)} \neq \emptyset\}$ converges to the set of cupcakes $j$ such that $j-1 \in [x_{k-1}^*, x_k^*]$.
+For any $k$, the discrete sum of person $\sigma(k)$ over the cupcakes starting in $[x_{k-1}^*, x_k^*]$ is:
+$$\sum_{j: j-1 \in [x_{k-1}^*, x_k^*]} s_{\sigma(k), j} \ge \lim_{v \to \infty} \mu_{\sigma(k), \epsilon_v}(I_k^{(v)}) \ge 1$$
+If a boundary $x_k^*$ coincides with an integer $j-1$, we assigned $j$ to group $G_{k+1}$ in our definition of $G_k = [x_{k-1}, x_k)$. However, the person who "lost" that cupcake at the boundary (because $x_k$ was the end of their arc) still has measure $\ge 1$ in the limit. Specifically, if $\mu(I_k) \ge 1$ in the limit, and $x_k^*$ is at $j-1$, then the cupcake $j$ did not contribute to the measure of $I_k$ at all (it only contributes to $I_{k+1}$).
+Thus, $S_{\sigma(k), G_k} = \sum_{j: j-1 \in [x_{k-1}^*, x_k^*)} s_{\sigma(k), j} \ge 1$.
+This provides a partition of $m$ cupcakes into $n$ contiguous groups where each person receives a group of score $\ge 1$.

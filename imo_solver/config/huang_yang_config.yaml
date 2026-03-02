@@ -1,0 +1,65 @@
+# Huang Yang Agent Role Configuration
+# References models from base_models_config.yaml and assigns them to roles with parameter overrides
+# This config uses Gemini models for optimal performance
+
+# ================================================================================
+# ROLE ASSIGNMENTS - Reference base models and override specific parameters
+# ================================================================================
+roles:
+  # Main problem solver role
+  prover:
+    model: gemini-2.5-pro-native          # Reference model from base_models_config.yaml
+    params:                               # Optional parameter overrides
+      temperature: 0.5                    # Override default temperature
+
+  # Solution verifier role
+  verifier:
+    model: gemini-2.5-pro-native          # Reference model from base_models_config.yaml
+    params:
+      temperature: 0.2                    # Override: lower for deterministic verification
+
+  # Self-improvement role (reviews and improves initial solution)
+  improver:
+    model: gemini-2.5-pro-native          # Reference model from base_models_config.yaml
+    params:
+      temperature: 0.3                    # Override: slightly higher for creativity
+
+  # Completeness checker role (checks if solution claims to be complete)
+  completeness_checker:
+    model: gemini-2.5-flash-no-thinking   # Reference model from base_models_config.yaml
+    # Using all default parameters from base model definition
+
+  # Bug report analyzer (analyzes verification results)
+  bug_analyzer:
+    model: gemini-2.5-flash-no-thinking   # Reference model from base_models_config.yaml
+    # Using all default parameters from base model definition
+
+# ================================================================================
+# EXECUTION SETTINGS
+# ================================================================================
+execution:
+  max_iterations: 40                     # Maximum correction iterations
+  success_threshold: 5                   # Consecutive successful verifications needed
+  failure_threshold: 10                  # Consecutive failed verifications before giving up
+  max_runs: 1                            # Default maximum runs per problem
+  num_agents: 1                          # Default agents per problem (for parallel & testing)
+  num_workers: null                      # Default max workers (null = auto)
+  # Unified logging configuration
+  base_log_dir: "./logs"                # Base directory for all logs
+  # Subdirectories: single/, parallel/, test/
+
+# ================================================================================
+# RETRY AND TIMEOUT SETTINGS
+# ================================================================================
+retry:
+  max_retries: 5
+  base_delay: 1.0
+
+# ================================================================================
+# LOGGING SETTINGS
+# ================================================================================
+logging:
+  verbose: true
+  log_api_requests: true
+  log_verification: true
+  log_reasoning: true

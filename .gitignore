@@ -1,0 +1,280 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+temp/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# API Keys and sensitive data
+*_api.txt
+*_api_key.txt
+*_key.txt
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Log files
+*.log
+logs/
+run_logs/
+run_logs_*/
+*.log.*
+
+# Claude AI
+.claude/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Large files
+*.pdf
+*.zip
+*.tar.gz
+*.rar
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn/
+package-lock.json
+yarn.lock
+
+# Frontend build
+/build
+/dist
+.cache/
+
+# Data files (but keep important config files)
+*.csv
+!proofbench.csv
+# *.json  # Commented out - we need package.json, problem_info.json, etc.
+*.xml
+*.sqlite
+*.db
+*.json
+*.jsonl
+
+# Model files
+*.pkl
+*.pickle
+*.h5
+*.hdf5
+*.model
+*.weights
+
+# Output directories
+output/
+results/
+experiments/
+
+# Grade-bench specific
+grade-bench/back-end/node_modules/
+grade-bench/front-end/node_modules/
+grade-bench/back-end/package-lock.json
+grade-bench/front-end/package-lock.json
+grade-bench/logs/
+grade-bench/front-end/build/
+grade-bench/back-end/logs/
+
+# Temporary files that should be ignored
+sanjeev.md
+
+# Stuff Liam generated
+logs_all_3k/
+logs_batch1/
+plots/
+scraped_responses/
+grading_data/
+
+# Misc folder for non-essential files
+misc/
+
+# Visualization files
+visualization/
+
+# CLAUDE.md
+CLAUDE.md
+
+grading/grading_results/
+
+# ============================================================
+# Experiment outputs & results (large, generated)
+# ============================================================
+proofbench_experiments/
+proofbench_grading_results/
+proofbench_basic_experiments/
+proofbench_basic_grading_results/
+proofbench_v18_results/
+proofbench_v19_results/
+proofbench_v18_post_enhancement/
+ablation_results/
+gemini3_experiments_output/
+gemini3_experiments_output_v2/
+gemini3_pro_combined_solutions/
+gemini25_pro_rewritten_solutions/
+gemini25_pro_reformatted_solutions/
+chooser_results/
+test_results/
+verifier_v*_test/
+
+# Generated LaTeX / text extracts
+extracted_proofs.tex
+*_extracted_proofs.tex
+*_rewritten_proofs.tex
+*_reformatted_proofs.tex
+*_final_proofs.tex
+*_final_proofs.txt
+*_combined_solutions_extracted.txt
+appendix_prompts.md
+
+# Generated plots
+*.png
+
+# Exploration / scratch notes
+EXPLORATION_SUMMARY.md
+CODEBASE_EXPLORATION_*.md
+lf_scratch/
+
+# Data archives
+data_archives/
+
+# Proof rewriter logs
+proof_rewriter*.log
+proof_rewriter*_api_log.jsonl
+proof_rewriter*_console.log
+
+# Pipeline diagram build artifacts
+pipeline_diagram.aux
+pipeline_diagram.log
+
+# IMO-level experiment data & outputs
+imo_level_experiments/
+imo_level_grading_results/
+outputs/
+
+AGENTS.md
+
+# Curated public release artifacts
+!release_results/
+!release_results/**
+
+# Private paper source (not open-sourced)
+paper.tex

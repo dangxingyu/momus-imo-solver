@@ -1,0 +1,112 @@
+**Part 1: The Process Log**
+
+**Stage 1: Ideation**
+
+*   **The Council of Architects:**
+    *   **Classicist:** Suggests utilizing the property that the reflection of the orthocenter $H$ across a side $BC$ lies on the circumcircle of $\triangle ABC$. While $AFP$ is a different circle, this establishes $P$'s location clearly.
+    *   **Visionary:** If $C$ is the midpoint of $XY$ on line $BC$, then the circumcenter $O$ of $\triangle AFP$ must project onto $BC$ exactly at $C$. This means $O$ must have the same $x$-coordinate as $C$ in a suitable coordinate system.
+    *   **Experimenter:** Let's place the foot of the altitude $D$ (from $A$ to $BC$) at the origin. This aligns $A$ and $P$ on the $y$-axis, making the perpendicular bisector of $AP$ a horizontal line.
+
+*   **Momus, the Skeptic:**
+    *   The "acute" condition is vital. It ensures that $F$ lies on the segment $AB$, not the extension.
+    *   Algebraic geometry can become a swamp. We must ensure the definitions of $H$ and $F$ are handled with extreme precision to avoid sign errors.
+
+*   **The Chief Architect:**
+    *   **Active_Strategy:** Analytical derivation via Cartesian coordinates. We will anchor the altitude $AD$ to the $y$-axis and $BC$ to the $x$-axis.
+    *   **Current_Draft:** `Empty`.
+
+---
+
+**Stage 2: The Dialectic Loop**
+
+**Round 1**
+
+1.  **Cognitive Reset (The Chief Architect):**
+    *   *Heights meet at a point,*
+    *   *Mirror $H$ across the base,*
+    *   *Circle finds its mark.*
+
+2.  **Drafting (The Council):**
+    *   Let $D$ be the foot of the altitude from $A$ to $BC$. Set $D = (0,0)$.
+    *   Let $A = (0, a)$, $B = (b, 0)$, and $C = (c, 0)$. For an acute triangle where $D$ is the foot from $A$, we have $b < 0 < c$.
+    *   **Orthocenter $H$:** The altitude from $A$ is the $y$-axis. The line $AC$ has slope $-a/c$. The altitude from $B$ to $AC$ has slope $c/a$. Its equation is $y - 0 = \frac{c}{a}(x - b)$.
+    *   $H$ is the intersection of $x=0$ and $y = \frac{c}{a}(x - b)$, so $H = (0, -bc/a)$.
+    *   **Point $P$:** $P$ is the reflection of $H$ across $BC$ ($x$-axis), so $P = (0, bc/a)$.
+    *   **Point $F$:** $F$ is the foot of the altitude from $C$ to $AB$.
+        *   Line $AB$: $y = -\frac{a}{b}x + a$.
+        *   Line $CF$: slope $b/a$, passes through $(c, 0)$. Equation: $y = \frac{b}{a}(x - c)$.
+        *   Intersection $F$: $-\frac{a}{b}x + a = \frac{b}{a}x - \frac{bc}{a} \implies a(a + \frac{bc}{a}) = x(\frac{b^2+a^2}{b})$.
+        *   $x_F = \frac{b(a^2+bc)}{a^2+b^2}$, $y_F = \frac{ab(b-c)}{a^2+b^2}$.
+
+3.  **The Gauntlet:**
+    *   **Veritas Pass 1 (The Censor):** Draft is clean of lazy semantics.
+    *   **Momus:** The $x_F$ derivation is slightly condensed. Ensure the logic holds.
+    *   **Veritas Pass 2 (The Logician):** `LOGICAL_GAP`: The transition from $F$ to the circumcenter $O$ is missing.
+
+**Round 2**
+
+1.  **Refinement (The Council):**
+    *   Find the circumcenter $O(x_O, y_O)$ of $\triangle AFP$.
+    *   $A(0, a)$ and $P(0, bc/a)$ are on the $y$-axis. The perpendicular bisector of $AP$ is the horizontal line $y = \frac{a + bc/a}{2} = \frac{a^2+bc}{2a}$.
+    *   The perpendicular bisector of $AF$: Midpoint $M = (\frac{x_F}{2}, \frac{a+y_F}{2})$. Slope of $AF$ (same as $AB$) is $-a/b$. Slope of bisector is $b/a$.
+    *   Equation: $y - \frac{a+y_F}{2} = \frac{b}{a}(x - \frac{x_F}{2})$.
+    *   Substitute $y = \frac{a^2+bc}{2a}$ and solve for $x$:
+    *   $\frac{a^2+bc}{2a} - \frac{a+y_F}{2} = \frac{b}{a}(x - \frac{x_F}{2}) \implies \frac{bc - ay_F}{2a} = \frac{b}{a}(x - \frac{x_F}{2})$.
+    *   $x = \frac{bc - ay_F}{2b} + \frac{x_F}{2} = \frac{bc - ay_F + bx_F}{2b}$.
+    *   Substitute $ay_F = \frac{a^2b(b-c)}{a^2+b^2}$ and $bx_F = \frac{b^2(a^2+bc)}{a^2+b^2}$.
+    *   $Numerator = bc + \frac{-a^2b^2 + a^2bc + a^2b^2 + b^3c}{a^2+b^2} = bc + \frac{bc(a^2+b^2)}{a^2+b^2} = 2bc$.
+    *   $x = \frac{2bc}{2b} = c$.
+
+4.  **The Verdict (Chief Architect):**
+    *   Since $x_O = c$, the projection of the circumcenter onto the line $BC$ is the point $(c, 0)$, which is $C$. In any circle, the projection of the center onto a chord's line is the midpoint of the chord. Therefore, $C$ is the midpoint of $XY$. Exit Loop.
+
+---
+
+**Part 2: The Final Synthesis**
+
+**The Architect's Log (Hemingway Style):**
+We chose the ground at the foot of the altitude. $D$ was the origin. The mountain $A$ sat on the vertical. $B$ and $C$ were on the flat earth. The orthocenter $H$ was found where the lines of height crossed. We mirrored it over the $x$-axis to find $P$. We found $F$ on the side $AB$. We drew a circle through $A, F,$ and $P$. The center of that circle sat exactly above $C$. Because it sat above $C$, the points where the circle cut the earth were equal distances from $C$. The math was clean. The proof is done.
+
+**The Final Blueprint:**
+
+**Problem:**
+Let $H$ be the orthocenter of acute triangle $ABC$, let $F$ be the foot of the altitude from $C$ to $AB$, and let $P$ be the reflection of $H$ across $BC$. Suppose that the circumcircle of triangle $AFP$ intersects line $BC$ at two distinct points $X$ and $Y$. Prove that $C$ is the midpoint of $XY$.
+
+**Proof:**
+1.  **Coordinate System:** Let $D$ be the foot of the altitude from $A$ to $BC$. Define $D$ as the origin $(0,0)$. Let the line $BC$ lie on the $x$-axis and the line $AD$ lie on the $y$-axis.
+    *   $A = (0, a)$
+    *   $B = (b, 0)$
+    *   $C = (c, 0)$
+    Since $\triangle ABC$ is acute, $D$ lies between $B$ and $C$, implying $b$ and $c$ have opposite signs. We set $b < 0 < c$.
+
+2.  **Coordinates of $H$ and $P$:**
+    The altitude from $A$ is the line $x=0$. The line $AC$ has slope $m_{AC} = \frac{0-a}{c-0} = -a/c$. The altitude from $B$ to $AC$ is perpendicular to $AC$, so its slope is $c/a$. The equation of this altitude is:
+    $y - 0 = \frac{c}{a}(x - b)$.
+    The orthocenter $H$ is the intersection of $x=0$ and this altitude. Substituting $x=0$ yields $y = -bc/a$. Thus, $H = (0, -bc/a)$.
+    Point $P$ is the reflection of $H$ across the $x$-axis ($BC$), so $P = (0, bc/a)$.
+
+3.  **Coordinates of $F$:**
+    The line $AB$ has slope $m_{AB} = \frac{0-a}{b-0} = -a/b$. Its equation is $y = -\frac{a}{b}x + a$.
+    The line $CF$ is the altitude from $C$ to $AB$, so its slope is $b/a$. Its equation is $y = \frac{b}{a}(x - c)$.
+    To find $F(x_F, y_F)$, we equate the two expressions for $y$:
+    $-\frac{a}{b}x + a = \frac{b}{a}x - \frac{bc}{a}$.
+    Multiplying by $ab$ gives $-a^2x + a^2b = b^2x - b^2c$, so $x(a^2 + b^2) = a^2b + b^2c$.
+    $x_F = \frac{b(a^2+bc)}{a^2+b^2}$ and $y_F = \frac{b}{a}(x_F - c) = \frac{b}{a}(\frac{a^2b + b^2c - a^2c - b^2c}{a^2+b^2}) = \frac{ab(b-c)}{a^2+b^2}$.
+
+4.  **Circumcenter $O$ of $\triangle AFP$:**
+    Let $O = (x_O, y_O)$. Since $A(0, a)$ and $P(0, bc/a)$ lie on the $y$-axis, $O$ lies on their perpendicular bisector:
+    $y_O = \frac{a + bc/a}{2} = \frac{a^2 + bc}{2a}$.
+    $O$ also lies on the perpendicular bisector of $AF$. The midpoint of $AF$ is $M = (\frac{x_F}{2}, \frac{a+y_F}{2})$. Since the slope of $AF$ is $-a/b$, the slope of the bisector is $b/a$. The equation is:
+    $y - \frac{a+y_F}{2} = \frac{b}{a}(x - \frac{x_F}{2})$.
+    Substitute $y_O$ into the equation to find $x_O$:
+    $\frac{a^2+bc}{2a} - \frac{a+y_F}{2} = \frac{b}{a}(x_O - \frac{x_F}{2})$
+    $\frac{bc - ay_F}{2a} = \frac{b}{a}(x_O - \frac{x_F}{2})$.
+    Multiply by $a/b$:
+    $x_O = \frac{bc - ay_F}{2b} + \frac{x_F}{2} = \frac{bc - ay_F + bx_F}{2b}$.
+    Substitute the expressions for $y_F$ and $x_F$:
+    $bc - ay_F + bx_F = bc - \frac{a^2b(b-c)}{a^2+b^2} + \frac{b^2(a^2+bc)}{a^2+b^2} = \frac{bc(a^2+b^2) - a^2b^2 + a^2bc + a^2b^2 + b^3c}{a^2+b^2}$
+    $= \frac{a^2bc + b^3c + a^2bc + b^3c}{a^2+b^2} = \frac{2bc(a^2+b^2)}{a^2+b^2} = 2bc$.
+    Thus, $x_O = \frac{2bc}{2b} = c$.
+
+5.  **Midpoint Property:**
+    The circumcircle of $\triangle AFP$ has center $O(c, y_O)$. The line $BC$ is the $x$-axis ($y=0$). The points $X$ and $Y$ are the intersections of the circle and the line $y=0$. For any circle, the perpendicular projection of the center onto a chord lies at the midpoint of that chord. The projection of $O(c, y_O)$ onto the $x$-axis is the point $(c, 0)$, which is vertex $C$. Therefore, $C$ is the midpoint of $XY$.

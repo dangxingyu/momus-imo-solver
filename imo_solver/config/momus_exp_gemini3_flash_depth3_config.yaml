@@ -1,0 +1,131 @@
+# Gemini 3 Flash (Depth 3) - Momus Configuration
+# Experiment: Testing gemini-3-flash with depth=3 (max_outer_loops=3)
+# Temperature: 1.0 (fixed for all roles)
+# Depth: 3 outer loops (low)
+# ALL ROLES USE GEMINI-3-FLASH
+
+# Base models imported from base_models_config.yaml
+base_models: "imo_solver/config/base_models_config.yaml"
+
+roles:
+  # ============================================================================
+  # SOLVER ROLE (Dialectic Engine) - GEMINI 3 FLASH
+  # ============================================================================
+  solver:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 65536
+      thinking_budget: 32768
+
+  # ============================================================================
+  # GRADER ROLE (Inquisitorial Logic)
+  # ============================================================================
+  grader:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 65536
+      thinking_budget: 32768
+
+  # ============================================================================
+  # CONJECTURE EXTRACTOR ROLE
+  # ============================================================================
+  conjecture_extractor:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 65536
+      thinking_budget: 32768
+
+  # ============================================================================
+  # PARSER ROLE (Batch Proof Parser)
+  # ============================================================================
+  parser:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 32768
+      thinking_budget: 16384
+
+  # ============================================================================
+  # QUALITY CHECKER ROLE
+  # ============================================================================
+  quality_checker:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 8192
+      thinking_budget: 8192
+
+  # ============================================================================
+  # ANSWER-PROCESSOR ROLE
+  # ============================================================================
+  answer_processor:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 16384
+      thinking_budget: 16384
+
+  # ============================================================================
+  # CONJECTURE PARSER ROLE
+  # ============================================================================
+  conjecture_parser:
+    model: gemini-3-flash
+    params:
+      temperature: 1.0
+      max_tokens: 16384
+      thinking_budget: 16384
+
+# ============================================================================
+# Execution Parameters
+# ============================================================================
+execution:
+  # Phase 1: Solver-Grader Loop
+  num_parallel_solvers: 4
+  max_solver_grader_rounds: 2
+  min_grade_for_phase2: 5
+
+  # Phase 2: Conjecture Extraction & Verification
+  num_top_solutions: 2
+  max_verification_rounds: 1
+  conjecture_grade_threshold: 5
+
+  # Phase 3: Final Solving
+  num_final_parallel_solvers: 5
+
+  # Outer Loop - DEPTH = 3 (LOW)
+  max_outer_loops: 3  # LOW DEPTH
+
+  # Global
+  success_threshold: 7
+  rule2_verification_count: 3
+
+  # Momus Post-Enhancement
+  enable_post_enhancement: true
+  post_enhancement_trigger_count: 3
+  post_enhancement_min_grade: 1
+  min_solutions_at_target: 3
+  target_grade: 6
+  num_rewriters: 2
+  conjecture_proven_threshold: 6
+  num_final_solvers: 3
+
+# ============================================================================
+# Retry Configuration
+# ============================================================================
+retry:
+  max_retries: 5
+  base_delay: 1.0
+  exponential_backoff: true
+
+# ============================================================================
+# Logging Configuration
+# ============================================================================
+logging:
+  verbose: true
+  log_api_requests: true
+  log_sessions: true
+  log_conjecture_extraction: true
+  log_verification: true

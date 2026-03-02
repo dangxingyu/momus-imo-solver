@@ -1,0 +1,138 @@
+# Momus Agent Configuration
+# Base pipeline + integrated post-enhancement.
+
+roles:
+  # ============================================================================
+  # SOLVER ROLE (Dialectic Engine)
+  # ============================================================================
+  solver:
+    model: gemini-2.5-pro-native
+    params:
+      temperature: 0.6
+      max_tokens: 65536
+      thinking_budget: 32768  # Controls thinking token allocation
+
+  # ============================================================================
+  # GRADER ROLE (Inquisitorial Logic)
+  # ============================================================================
+  grader:
+    model: gemini-2.5-pro-native
+    params:
+      temperature: 0.1  # Low temperature for consistent grading
+      max_tokens: 65536
+      thinking_budget: 32768  # Controls thinking token allocation
+
+  # ============================================================================
+  # CONJECTURE EXTRACTOR ROLE
+  # ============================================================================
+  conjecture_extractor:
+    model: gemini-2.5-pro-native
+    params:
+      temperature: 0.3
+      max_tokens: 65536
+      thinking_budget: 32768  # Controls thinking token allocation
+
+  # ============================================================================
+  # PARSER ROLE (Batch Proof Parser)
+  # ============================================================================
+  parser:
+    model: gemini-2.5-pro-native
+    params:
+      temperature: 0.1  # Very deterministic for parsing
+      max_tokens: 32768
+      thinking_budget: 16384  # Controls thinking token allocation
+
+  # ============================================================================
+  # QUALITY CHECKER ROLE (Lightweight, for self-contained check)
+  # ============================================================================
+  quality_checker:
+    model: gemini-2.5-flash-native
+    params:
+      temperature: 0.0
+      max_tokens: 8192  # Increased from 2048
+      # Removed thinking_budget for Flash
+
+  # ============================================================================
+  # ANSWER-PROCESSOR ROLE (Rule 1: Scan proofs for lazy phrases)
+  # ============================================================================
+  answer_processor:
+    model: gemini-2.5-flash-native
+    params:
+      temperature: 0.0
+      max_tokens: 16384  # Increased from 2048
+      # Removed thinking_budget for Flash
+
+  # ============================================================================
+  # CONJECTURE PARSER ROLE (Lightweight, for structured extraction)
+  # ============================================================================
+  conjecture_parser:
+    model: gemini-2.5-flash-native
+    params:
+      temperature: 0.0  # Very deterministic for parsing
+      max_tokens: 16384  # Needs more tokens to output full conjectures
+
+# ============================================================================
+# Execution Parameters
+# ============================================================================
+execution:
+  # Phase 1: Solver-Grader Loop
+  num_parallel_solvers: 4                # K parameter (K parallel solutions)
+  max_solver_grader_rounds: 2           # Max iterations of Steps 1-5
+  min_grade_for_phase2: 5               # Threshold to proceed to Phase 2
+
+  # Phase 2: Conjecture Extraction & Verification
+  num_top_solutions: 2                  # Top N solutions to extract conjectures from
+  max_verification_rounds: 1            # Max rounds for conjecture verification (STRICT)
+  conjecture_grade_threshold: 5         # Minimum grade to consider a conjecture "proven"
+
+  # Phase 3: Final Solving
+  num_final_parallel_solvers: 5        # K parameter for final solving (1 reserved for previous loop best)
+
+  # Outer Loop (iterates Phase 2 & 3)
+  max_outer_loops: 3                   # Number of times to iterate Phase 2-3 (accumulating lemmas)
+
+  # Global
+  success_threshold: 7                  # Must be exactly 7 for success
+  rule2_verification_count: 3           # Number of independent graders for Rule 2 (7/7 verification) - INCREASED FROM 2
+  enable_answer_processor: false        # Disable Rule 1 (Answer-Processor) to save API calls
+
+  # Feedback Mode: Controls what part of grader feedback is injected back to solver
+  # - "full": Entire grader response (default, backward compatible)
+  # - "areas_only": Only "Areas for Improvement" section
+  # - "areas_and_scaffolding": "Areas for Improvement" + "Scaffolding Questions"
+  feedback_mode: "areas_and_scaffolding"
+
+  # =========================================================================
+  # Momus Integrated Post-Enhancement Settings
+  # =========================================================================
+  # Automatic post-enhancement for near-perfect solutions
+  enable_post_enhancement: true          # Enable automatic post-enhancement after base pipeline pipeline
+  post_enhancement_trigger_count: 3      # Number of independent grades to check if enhancement is needed
+                                        # (If NOT all are 7/7, run enhancement)
+  post_enhancement_min_grade: 1          # Minimum average grade required to trigger enhancement
+                                        # (0 = all solutions, 1 = skip completely wrong, 6 = only near-perfect)
+
+  # Post-enhancement pipeline settings (inherited from base pipeline Post-Enhancement Agent)
+  min_solutions_at_target: 3            # Minimum number of 6/7 solutions to trigger post-enhancement
+  target_grade: 6                       # Grade that triggers enhancement
+  num_rewriters: 2                      # Number of parallel conjecture extractors
+  conjecture_proven_threshold: 6        # Grade needed to consider conjecture "proven"
+  num_final_solvers: 3                  # K parameter for Step 5 (enhanced final solving)
+
+# ============================================================================
+# Retry Configuration
+# ============================================================================
+retry:
+  max_retries: 5
+  base_delay: 1.0
+  exponential_backoff: true
+
+# ============================================================================
+# Logging Configuration
+# ============================================================================
+logging:
+  verbose: true
+  log_api_requests: true
+  log_sessions: true
+  log_conjecture_extraction: true
+  log_verification: true

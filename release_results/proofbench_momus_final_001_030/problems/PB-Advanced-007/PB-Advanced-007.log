@@ -1,0 +1,528 @@
+
+================================================================================
+Momus Batch Run: PB-Advanced-007
+Config: imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml
+Started: 2026-02-27T23:01:25.813632
+================================================================================
+
+================================================================================
+HYPERPARAMETERS & CONFIGURATION
+================================================================================
+Agent Type: MomusAgent
+Config File: imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml
+Prompts File: imo_solver/prompts/momus_prompts.yaml
+Base Models File: Auto-detected
+Log File: release_results/proofbench_momus_final_001_030/problems/PB-Advanced-007/PB-Advanced-007.log
+
+Execution Settings:
+  num_parallel_solvers: 4
+  max_solver_grader_rounds: 2
+  min_grade_for_phase2: 5
+  num_top_solutions: 2
+  max_verification_rounds: 1
+  conjecture_grade_threshold: 5
+  num_final_parallel_solvers: 5
+  max_outer_loops: 3
+  success_threshold: 7
+  rule2_verification_count: 3
+  enable_post_enhancement: True
+  post_enhancement_trigger_count: 3
+  post_enhancement_min_grade: 1
+  min_solutions_at_target: 3
+  target_grade: 6
+  num_rewriters: 2
+  conjecture_proven_threshold: 6
+  num_final_solvers: 3
+
+Retry Settings:
+  max_retries: 5
+  base_delay: 1.0
+  exponential_backoff: True
+
+Logging Settings:
+  verbose: True
+  log_api_requests: True
+  log_sessions: True
+  log_conjecture_extraction: True
+  log_verification: True
+================================================================================
+
+
+================================================================================
+MOMUS CORE AGENT INITIALIZED
+================================================================================
+Phase 1 - Parallel solvers: 4
+Phase 1 - Max S-G rounds: 2
+Phase 2 - Top solutions: 2
+Phase 2 - Max verification rounds: 1
+Phase 3 - Final parallel solvers: 5
+Max outer loops: 3
+Success threshold: 7/7
+Rule 2 verifications: 3
+================================================================================
+
+================================================================================
+MOMUS BASE AGENT INITIALIZED
+================================================================================
+
+================================================================================
+MOMUS AGENT INITIALIZED
+================================================================================
+Rule 2 verifications: 3 (improved from base pipeline)
+Post-enhancement enabled: True
+Post-enhancement trigger: 3 independent grades
+Post-enhancement min grade: 1/7
+================================================================================
+
+Running Momus Agent on PB-Advanced-007...
+Problem:
+Prove that there exist two real-coefficient polynomials $P(x)$ and $Q(x)$ satisfying the following condition:
+
+ (Condition) The degree of the polynomial $P(x)$ is at least 2024, the degree of $Q(x)$ is at least 2, and for any real number $x$, the following holds:
+
+ \[
+ P(Q(x)-x-1)=Q(P(x))
+ \]
+
+
+================================================================================
+MOMUS PIPELINE START
+================================================================================
+
+>>> PHASE 1-3: Running base pipeline Base Pipeline
+
+================================================================================
+STARTING MOMUS CORE PIPELINE
+================================================================================
+Problem:
+Prove that there exist two real-coefficient polynomials $P(x)$ and $Q(x)$ satisfying the following condition:
+
+ (Condition) The degree of the polynomial $P(x)$ is at least 2024, the degree of $Q(x)$ is at least 2, and for any real number $x$, the following holds:
+
+ \[
+ P(Q(x)-x-1)=Q(P(x))
+ \]
+
+
+================================================================================
+PHASE 1: SOLVER-GRADER LOOP (base pipeline)
+================================================================================
+
+======================================================================
+SOLVER-GRADER ROUND 1/2
+======================================================================
+
+======================================================================
+STEP 1: PARALLEL INITIAL SOLVING (K=4)
+======================================================================
+Using model: gemini-3-flash-preview
+
+Launching 4 solvers in parallel...
+
+[Solver 1] Starting...
+
+[Solver 2] Starting...
+
+[Solver 3] Starting...
+
+[Solver 4] Starting...
+
+======================================================================
+API CALL #1 [Step 1 - Solver 1/4] - solver
+======================================================================
+Prompt: 343 chars
+Response: 5707 chars
+
+ Token Usage:
+  Prompt tokens:      1433
+  Output tokens:      2296
+  Thinking tokens:    22310
+  Total tokens:       26039
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+[Gemini Response] Text: 9 chars, Thoughts: 3470 tokens, Output: 4 tokens, Total: 5851 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Solver 1] ✓ Generated and improved (5707 chars)
+
+======================================================================
+API CALL #2 [Step 1 - Solver 2/4] - solver
+======================================================================
+Prompt: 343 chars
+Response: 5930 chars
+
+ Token Usage:
+  Prompt tokens:      1433
+  Output tokens:      2462
+  Thinking tokens:    25573
+  Total tokens:       29468
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+[Gemini Response] Text: 9 chars, Thoughts: 1278 tokens, Output: 4 tokens, Total: 3825 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Solver 2] ✓ Generated and improved (5930 chars)
+
+======================================================================
+API CALL #3 [Step 1 - Solver 4/4] - solver
+======================================================================
+Prompt: 343 chars
+Response: 8317 chars
+
+ Token Usage:
+  Prompt tokens:      1433
+  Output tokens:      3620
+  Thinking tokens:    40180
+  Total tokens:       45233
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+[Gemini Response] Text: 729 chars, Thoughts: 6753 tokens, Output: 192 tokens, Total: 10646 tokens
+  ✓ Found issues (729 chars of comments)
+  Asking solver to regenerate proof...
+
+======================================================================
+API CALL #4 [Step 1 - Solver 3/4] - solver
+======================================================================
+Prompt: 343 chars
+Response: 6008 chars
+
+ Token Usage:
+  Prompt tokens:      1433
+  Output tokens:      2469
+  Thinking tokens:    52118
+  Total tokens:       56020
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+[Gemini Response] Text: 9 chars, Thoughts: 6164 tokens, Output: 4 tokens, Total: 8718 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Solver 3] ✓ Generated and improved (6008 chars)
+
+======================================================================
+API CALL #5 [Rule 1 - Regenerate Proof] - solver
+======================================================================
+Prompt: 974 chars
+Response: 13456 chars
+
+ Token Usage:
+  Prompt tokens:      5306
+  Output tokens:      6485
+  Thinking tokens:    12483
+  Total tokens:       24274
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  ✓ Proof regenerated (13456 chars)
+[Solver 4] ✓ Generated and improved (13456 chars)
+
+Step 1 complete: 4/4 solutions generated
+
+======================================================================
+STEP 2/4/11: PARALLEL GRADING
+======================================================================
+
+Launching 4 graders in parallel...
+[Grader 1] Starting...
+[Grader 2] Starting...
+  ✓ Extracted Final Blueprint (2198 chars from 5707 chars)
+[Grader 3] Starting...
+[Grader 4] Starting...
+  ✓ Extracted Final Blueprint (1845 chars from 5930 chars)
+  ✓ Extracted Final Blueprint (2250 chars from 6008 chars)
+  ✓ Extracted Final Blueprint (2672 chars from 13456 chars)
+
+======================================================================
+API CALL #6 [Parallel Grade 2] - grader
+======================================================================
+Prompt: 2217 chars
+Response: 2833 chars
+
+ Token Usage:
+  Prompt tokens:      2048
+  Output tokens:      866
+  Thinking tokens:    2136
+  Total tokens:       5050
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 2] Grade: 7/7
+
+======================================================================
+API CALL #7 [Parallel Grade 1] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 2851 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      784
+  Thinking tokens:    3025
+  Total tokens:       5956
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 1] Grade: 7/7
+
+======================================================================
+API CALL #8 [Parallel Grade 3] - grader
+======================================================================
+Prompt: 2622 chars
+Response: 2822 chars
+
+ Token Usage:
+  Prompt tokens:      2180
+  Output tokens:      813
+  Thinking tokens:    5022
+  Total tokens:       8015
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 3] Grade: 7/7
+
+======================================================================
+API CALL #9 [Parallel Grade 4] - grader
+======================================================================
+Prompt: 3044 chars
+Response: 4153 chars
+
+ Token Usage:
+  Prompt tokens:      2471
+  Output tokens:      1169
+  Thinking tokens:    7823
+  Total tokens:       11463
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 4] Grade: 2/7
+
+Grading complete: [7, 7, 7, 2]
+  ✓ Extracted Final Blueprint (2198 chars from 5707 chars)
+  ✓ Extracted Final Blueprint (1845 chars from 5930 chars)
+  ✓ Extracted Final Blueprint (2250 chars from 6008 chars)
+  ✓ Extracted Final Blueprint (2672 chars from 13456 chars)
+
+Round 1 - Max grade: 7/7
+✓ Perfect score detected in round 1
+
+================================================================================
+PERFECT SCORE DETECTED - TRIGGERING RULE 2 VERIFICATION
+================================================================================
+
+======================================================================
+RULE 2: DOUBLE VERIFICATION (2 Independent Graders)
+======================================================================
+  ✓ Extracted Final Blueprint (2198 chars from 5707 chars)
+
+[Verifier 1] Starting...
+
+[Verifier 2] Starting...
+
+[Verifier 3] Starting...
+
+======================================================================
+API CALL #10 [Rule 2 - Verification 1/3] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 2932 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      780
+  Thinking tokens:    2021
+  Total tokens:       4948
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+[Verifier 1] Score: 7/7
+
+======================================================================
+API CALL #11 [Rule 2 - Verification 3/3] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 2781 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      769
+  Thinking tokens:    3129
+  Total tokens:       6045
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+[Verifier 3] Score: 7/7
+
+======================================================================
+API CALL #12 [Rule 2 - Verification 2/3] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 3002 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      872
+  Thinking tokens:    6684
+  Total tokens:       9703
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+[Verifier 2] Score: 7/7
+
+✓ RULE 2 PASSED: All 3 verifications returned 7/7
+
+✓ RULE 2 VERIFICATION PASSED - SUCCESS!
+
+================================================================================
+base pipeline PIPELINE COMPLETE - CHECKING POST-ENHANCEMENT
+================================================================================
+
+>>> PHASE 4: Post-Enhancement Check
+Running 3 independent evaluations...
+
+Running 3 independent grades...
+  ✓ Extracted Final Blueprint (2198 chars from 5707 chars)
+
+[Independent Grade 1/3]
+
+======================================================================
+API CALL #13 [Post-Enhancement Check - Grade 1] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 3224 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      847
+  Thinking tokens:    1794
+  Total tokens:       4788
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+[Independent Grade 2/3]
+
+======================================================================
+API CALL #14 [Post-Enhancement Check - Grade 2] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 2697 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      704
+  Thinking tokens:    2227
+  Total tokens:       5078
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+[Independent Grade 3/3]
+
+======================================================================
+API CALL #15 [Post-Enhancement Check - Grade 3] - grader
+======================================================================
+Prompt: 2570 chars
+Response: 2874 chars
+
+ Token Usage:
+  Prompt tokens:      2147
+  Output tokens:      779
+  Thinking tokens:    2190
+  Total tokens:       5116
+  Cached tokens:      2023
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+✗ POST-ENHANCEMENT NOT TRIGGERED
+All 3 grades = 7/7
+Solution is already perfect
+
+✓ Solution is perfect (all grades 7/7) - no enhancement needed
+
+================================================================================
+RESULT: SolutionStatus.SOLVED
+Duration: 476.4s
+================================================================================

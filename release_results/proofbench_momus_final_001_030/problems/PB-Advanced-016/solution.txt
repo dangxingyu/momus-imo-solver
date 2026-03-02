@@ -1,0 +1,54 @@
+**The Final Blueprint**
+
+**The Problem**
+Let $ABC$ be a non-isosceles triangle with incenter $I$. Let line $BI$ intersect $AC$ at $E$, and line $CI$ intersect $AB$ at $F$. Points $U$ and $V$ lie on segments $AB$ and $AC$ respectively, such that $AU = AE$ and $AV = AF$. Let the line passing through $I$ perpendicular to $AI$ intersect line $BC$ at $L$. The circumcircle of $\triangle ILC$ intersects line $LU$ at $X$ (other than $L$), and the circumcircle of $\triangle ILB$ intersects line $LV$ at $Y$ (other than $L$). If $P$ is the intersection of lines $YB$ and $XC$, prove that line $IP$ is parallel to line $XY$.
+
+---
+
+**Proof**
+
+**Step 1: Collinearity of $L, U,$ and $V$**
+Let $a, b, c$ denote the side lengths $BC, AC, AB$. By the Angle Bisector Theorem, $AE = \frac{bc}{a+c}$ and $AF = \frac{bc}{a+b}$. Given $AU = AE$ and $AV = AF$, we determine the segment ratios on $AB$ and $AC$:
+$$\frac{AU}{UB} = \frac{\frac{bc}{a+c}}{c - \frac{bc}{a+c}} = \frac{b}{a+c-b}, \quad \frac{CV}{VA} = \frac{b - \frac{bc}{a+b}}{\frac{bc}{a+b}} = \frac{a+b-c}{c}$$
+Set vertex $A$ at $(0,0)$ and let the internal bisector $AI$ be the $x$-axis. Let $\angle A = 2\alpha$. The coordinates of $B$ and $C$ are $(c \cos \alpha, -c \sin \alpha)$ and $(b \cos \alpha, b \sin \alpha)$. The incenter $I$ is at $(d, 0)$. In the right triangle formed by $I$ and its projection on $AB$, the distance from $A$ to the point of tangency is $s-a$. Thus, $d = \frac{s-a}{\cos \alpha}$.
+The line through $I$ perpendicular to $AI$ is $x = d$. $L$ is the intersection of $BC$ and $x=d$. The ratio $BL/LC$ is given by the ratio of $x$-coordinate differences:
+$$x_L - x_B = d - c \cos \alpha = \frac{s-a - c \cos^2 \alpha}{\cos \alpha}$$
+Using the identity $\cos^2 \alpha = \frac{s(s-a)}{bc}$, we have:
+$$x_L - x_B = \frac{(s-a) - \frac{s(s-a)}{b}}{\cos \alpha} = \frac{(s-a)(b-s)}{b \cos \alpha}$$
+Similarly, $x_C - x_L = b \cos \alpha - d = \frac{(s-a)(s-c)}{c \cos \alpha}$. Thus:
+$$\frac{BL}{LC} = \frac{x_L - x_B}{x_C - x_L} = \frac{c(b-s)}{b(s-c)} = -\frac{c(a+c-b)}{b(a+b-c)}$$
+The product $\frac{AU}{UB} \cdot \frac{BL}{LC} \cdot \frac{CV}{VA} = \frac{b}{a+c-b} \cdot \left( -\frac{c(a+c-b)}{b(a+b-c)} \right) \cdot \frac{a+b-c}{c} = -1$. By Menelaus' Theorem, $L, U,$ and $V$ are collinear. Let this line be $\mathcal{L}$ with slope $k$. Points $X$ and $Y$ lie on $\mathcal{L}$, so $XY$ is line $\mathcal{L}$.
+
+**Step 2: Analytic Framework and the Invariant**
+Shift the origin to $I(0,0)$. The line $L_{perp}$ is the $y$-axis. Let $L = (0, h)$. Line $BC$ passes through $L$ with slope $m$: $y = mx + h$. The distance from $(0,0)$ to $mx - y + h = 0$ is the inradius $r$:
+$$\frac{|h|}{\sqrt{m^2+1}} = r \implies h^2 = r^2(1+m^2)$$
+Let the $x$-coordinates of $B$ and $C$ in this frame be $x_B$ and $x_C$. These correspond to $(x_{old} - d)$. From Step 1:
+$$x_B x_C = \left( \frac{(s-a)(b-s)}{b \cos \alpha} \right) \left( \frac{-(s-a)(s-c)}{c \cos \alpha} \right) = \frac{-(s-a)^2 (-(s-b))(s-c)}{bc \cos^2 \alpha}$$
+Substituting $\cos^2 \alpha = \frac{s(s-a)}{bc}$:
+$$x_B x_C = \frac{(s-a)^2 (s-b)(s-c)}{s(s-a)} = \frac{(s-a)(s-b)(s-c)}{s} = r^2$$
+This proves the invariant $x_B x_C = r^2$ in this coordinate frame.
+
+**Step 3: Circle Equations and Intersections**
+A circle through $(0,0)$ and $(0,h)$ has the form $x^2 + y^2 + Dx - hy = 0$. For point $Z(x_Z, y_Z)$ on the circle:
+$$D = -\frac{x_Z^2 + y_Z^2 - hy_Z}{x_Z}$$
+Since $y_Z = mx_Z + h$, we simplify $D$:
+$$D = -\frac{x_Z^2 + (mx_Z+h)^2 - h(mx_Z+h)}{x_Z} = -(x_Z(1+m^2) + hm)$$
+The circle $(ILB)$ intersects $\mathcal{L}$ ($y = kx + h$) at $Y$. Substituting $y$:
+$$x^2 + (kx+h)^2 - [x_B(1+m^2) + hm]x - h(kx+h) = 0$$
+Expanding and solving for the non-zero root $x_Y$:
+$$x_Y(1+k^2) + 2kh + h^2/x_Y \dots \implies x_Y = \frac{x_B(1+m^2) + h(m-k)}{1+k^2}$$
+Similarly, $x_X = \frac{x_C(1+m^2) + h(m-k)}{1+k^2}$.
+
+**Step 4: Intersection $P$ and Parallelism**
+Line $YB$ passes through $(x_B, mx_B + h)$ and $(x_Y, kx_Y + h)$. We find its intersection with $y = kx$. Substituting $y$ and multiplying by $(x_Y - x_B)$:
+$$(kx - mx_B - h)(x_Y - x_B) = (kx_Y - mx_B)(x - x_B)$$
+$$x[x_B(m-k)] = x_Y(mx_B + h - kx_B) - hx_B$$
+Substitute $x_Y$ and multiply by $(1+k^2)$:
+$$x[x_B(m-k)](1+k^2) = [x_B(1+m^2) + h(m-k)][x_B(m-k) + h] - hx_B(1+k^2)$$
+Expanding the right hand side:
+$$= x_B^2(1+m^2)(m-k) + x_Bh(1+m^2) + hx_B(m-k)^2 + h^2(m-k) - hx_B - hx_Bk^2$$
+$$= (m-k)[x_B^2(1+m^2) + 2hmx_B + h^2]$$
+Thus, $x = \frac{x_B^2(1+m^2) + 2hmx_B + h^2}{x_B(1+k^2)} = \frac{x_B(1+m^2) + 2hm + \frac{h^2}{x_B}}{1+k^2}$.
+Using $h^2 = r^2(1+m^2)$ and $r^2 = x_B x_C$, we find $\frac{h^2}{x_B} = x_C(1+m^2)$. Hence:
+$$x_P = \frac{(x_B + x_C)(1+m^2) + 2hm}{1+k^2}$$
+As $x_P$ is symmetric in $x_B$ and $x_C$, $P$ is the intersection of $YB$ and $XC$. Since $P$ lies on $y=kx$, line $IP$ has slope $k$, which is the slope of line $XY$. Thus, $IP \parallel XY$.

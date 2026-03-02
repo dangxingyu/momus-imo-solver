@@ -1,0 +1,40 @@
+**The Problem:** Determine which player has a winning strategy for the city-and-road game.
+
+**Alice's Winning Strategy:**
+Alice chooses $P = (0,0)$ and $Q = (1,0)$ in the Cartesian plane. She chooses $S$ to be the set of all points strictly outside the closed disk with diameter $PQ$:
+$$S = \left\{ (x,y) \in \mathbb{R}^2 : \left(x - \frac{1}{2}\right)^2 + y^2 > \frac{1}{4} \right\}$$
+
+**Proof of Alice's Win:**
+
+**I. Equivalence to the Gabriel Graph**
+Let the cities placed by Bob be the set $V$. A road exists between $A$ and $B$ if and only if for every $C \in V \setminus \{A, B\}$, there exists $R \in S$ such that $\triangle PQR$ is directly similar to $\triangle ABC$ or $\triangle BAC$.
+In complex numbers $(a, b, c, p, q, r)$:
+1. $\triangle PQR \sim \triangle ABC \implies \frac{r-p}{q-p} = \frac{c-a}{b-a}$.
+2. $\triangle PQR \sim \triangle BAC \implies \frac{r-p}{q-p} = \frac{c-b}{a-b} = 1 - \frac{c-a}{b-a}$.
+
+Let $w = \frac{c-a}{b-a}$. With $p=0, q=1$, $R \in S$ means $|r - 1/2| > 1/2$. The condition for road $AB$ is that for all $C$:
+$$w \in S \text{ or } (1-w) \in S$$
+Since $|w - 1/2| = |(1-w) - 1/2|$, the condition is simply $|w - 1/2| > 1/2$, which simplifies to:
+$$\left| \frac{c-a}{b-a} - \frac{1}{2} \right| > \frac{1}{2} \iff \left| c - \frac{a+b}{2} \right| > \frac{|b-a|}{2}$$
+Thus, a road exists between $A$ and $B$ if and only if every city $C$ lies strictly outside the closed disk $D_{AB}$ with diameter $AB$. This construction defines a **Gabriel Graph**.
+
+**II. Proof of Condition (ii): No Two Roads Cross**
+Suppose two roads $UV$ and $XY$ intersect at an interior point $M$. Because no three points in $V$ are collinear, $U, X, V, Y$ must form a convex quadrilateral with diagonals $UV$ and $XY$. 
+Since $UV$ is a road, $X$ and $Y$ must lie outside the disk $D_{UV}$. The property of diametric disks states that for any point $Z$, $Z$ is outside $D_{UV}$ if and only if $\angle UZV < 90^\circ$. Thus:
+$$\angle UXV < 90^\circ \text{ and } \angle UYV < 90^\circ$$
+Similarly, since $XY$ is a road, $U$ and $V$ must lie outside $D_{XY}$:
+$$\angle XUY < 90^\circ \text{ and } \angle XVY < 90^\circ$$
+The sum of the four interior angles of the convex quadrilateral $UXVY$ is exactly $360^\circ$. However, we have:
+$$\angle XUY + \angle UXV + \angle XVY + \angle UYV < 90^\circ + 90^\circ + 90^\circ + 90^\circ = 360^\circ$$
+This contradiction proves that no two roads can intersect.
+
+**III. Proof of Condition (i): Connectivity**
+Suppose the graph is disconnected. Partition $V$ into two non-empty sets $K$ and $V \setminus K$ such that no road exists between them. Pick $a_0 \in K$ and $b_0 \in V \setminus K$. 
+If the road $a_0 b_0$ does not exist, there exists $c_1 \in V$ inside the disk $D_{a_0 b_0}$. Since $c_1 \in D_{a_0 b_0}$, $\angle a_0 c_1 b_0 \ge 90^\circ$. By the Law of Cosines and non-collinearity:
+$$|a_0 - b_0|^2 > |a_0 - c_1|^2 + |c_1 - b_0|^2$$
+The point $c_1$ belongs to either $K$ or $V \setminus K$. 
+1. If $c_1 \in K$, define the new pair $(a_1, b_1) = (c_1, b_0)$.
+2. If $c_1 \in V \setminus K$, define the new pair $(a_1, b_1) = (a_0, c_1)$.
+In either case, one endpoint is in $K$, the other is in $V \setminus K$, and the squared distance $|a_1 - b_1|^2$ has decreased. Specifically, since the distance between any two cities is at least 1, the squared distance decreases by at least 1:
+$$|a_1 - b_1|^2 \le |a_0 - b_0|^2 - (\text{dist to the replaced point})^2 \le |a_0 - b_0|^2 - 1$$
+We can repeat this "finite descent." After $n$ steps, $|a_n - b_n|^2 \le |a_0 - b_0|^2 - n$. Since $|a_n - b_n|^2 \ge 1$, the number of steps $n$ must be finite. The process only terminates if $D_{a_n b_n}$ contains no other cities, meaning $a_n b_n$ is a road. This road connects $K$ and $V \setminus K$, contradicting our assumption. Thus, the graph is connected.

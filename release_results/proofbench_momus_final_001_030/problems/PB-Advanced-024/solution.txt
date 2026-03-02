@@ -1,0 +1,147 @@
+### **Part 1: The Process Log**
+
+**Stage 1: Ideation**
+
+*   **The Council of Architects:**
+    *   **Classicist:** We must establish the value of $P(0)$ and determine if $P$ is a bijection. These are the foundations of functional equations on $\mathbb{Q}$.
+    *   **Visionary:** The equation involves two factors. If one factor being zero implies the other factor is zero, the function must be an involution ($P(P(x))=x$).
+    *   **Experimenter:** Let's assume $P(x) = mx$ and see if that satisfies the condition. $P(b-ma) = m(b-ma) = mb - m^2a$. The first factor becomes $mb - m^2a + a - mb = (1-m^2)a$. This is zero for all $a$ if $m^2=1$, so $m=1$ or $m=-1$. Both yield $P(a)+P(-a)=0$.
+*   **Momus (The Skeptic):** The previous draft had major gaps. You cannot simply state "any deviation leads to a contradiction." You must explicitly show why $P(P(x)) \neq x$ is impossible. You must also prove Cauchy’s Functional Equation for the rational domain from scratch.
+*   **Chief Architect:** **Active_Strategy:**
+    1.  Prove $P(0)=0$ using targeted substitutions.
+    2.  Prove $P$ is a bijection and $P(-P(x)) = -x$.
+    3.  Prove $P(P(x))=x$ by showing that $P(P(b)) \neq b$ leads to $P(P(b)) = b$ through the factor product.
+    4.  Derive Cauchy's Functional Equation and prove its linear solution $P(x)=mx$ for $x \in \mathbb{Q}$.
+    5.  Conclude the size of the set.
+
+---
+
+**Stage 2: The Dialectic Loop**
+
+**Round 1**
+
+1.  **Cognitive Reset (Chief Architect):**
+    *   *Haiku:*
+        Ratios in a line,
+        Zero anchors every turn,
+        Mirror proves the truth.
+
+2.  **Drafting (The Council):**
+    *   *Step 1 (Anchor):* Let $P(0) = c$. Setting $a = 0$ gives $(P(b - c) - P(b))(P(P(b - c)) - b) = 0$.
+    *   For $b = c$, $(c - P(c))(c - c) = 0$, but this is always true. However, the first factor of the $a=0$ equation for $b=c$ is $P(0)-P(c) = c-P(c)$. The second factor is $P(P(0))-c = P(c)-c$. Thus $-(c-P(c))^2 = 0 \implies P(c)=c$.
+    *   For $b = 2c$ in the $a=0$ equation: $(P(c) - P(2c))(P(P(c)) - 2c) = (c - P(2c))(c - 2c) = 0$. Since $c \neq 2c$ (unless $c=0$), we have $P(2c)=c$.
+    *   Substitute $a=c, b=2c$ into the original: Factor 1 is $P(2c-P(c))+c-P(2c) = P(c)+c-c = c$. Factor 2 is $P(c+P(2c-P(c)))-2c = P(c+P(c))-2c = P(2c)-2c = c-2c = -c$. Product $-c^2=0 \implies c=0$.
+    *   *Step 2 (Involution):* With $P(0)=0$, $b=0 \implies (P(-P(a))+a)P(a+P(-P(a)))=0$.
+    *   If $P(k)=0$ for $k \neq 0$, original at $a=k \implies k(P(k+P(b))-b)=0 \implies P(k+P(b))=b$. For $b=0$, $P(k)=0$. For $b=P(k)$, $P(k+P(k))=k \implies P(k)=k \implies 0=k$. Contradiction. So $P(x)=0 \iff x=0$.
+    *   Thus $P(-P(a)) = -a$. This proves bijectivity.
+
+3.  **The Gauntlet:**
+    *   **Veritas Pass 1:** Clean.
+    *   **Momus:** The $P(P(x))=x$ derivation is still missing.
+    *   **Veritas Pass 2:** Step 2 is solid. The logic for $P(x)=0 \iff x=0$ is now atomic.
+
+**Round 2**
+
+1.  **Cognitive Reset (Chief Architect):**
+    *   *Haiku:*
+        If the path should bend,
+        It must break the starting point,
+        Thus the line stays straight.
+
+2.  **Refinement (The Council):**
+    *   *Step 3 (The Proof of $P(P(x))=x$):*
+    *   Let $L(a,b) = P(b-P(a)) + a - P(b)$ and $R(a,b) = P(a+P(b-P(a))) - b$.
+    *   Fix $b \in \mathbb{Q}$. Suppose $P(P(b)) \neq b$.
+    *   If for some $a$, $L(a,b) = 0$, then $P(b-P(a)) = P(b)-a$.
+    *   Substituting this into $R(a,b)$: $R(a,b) = P(a + P(b) - a) - b = P(P(b)) - b$.
+    *   Since we assumed $P(P(b)) \neq b$, $R(a,b) \neq 0$.
+    *   Because the product $L \cdot R = 0$, it follows that if $R \neq 0$, then $L$ must be $0$.
+    *   Thus, if $P(P(b)) \neq b$, then $L(a,b) = 0$ for all $a \in \mathbb{Q}$.
+    *   Specifically, for $a = P(b)$, $L(P(b), b) = P(b-P(P(b))) + P(b) - P(b) = P(b-P(P(b)))$.
+    *   Setting $L = 0 \implies P(b-P(P(b))) = 0$.
+    *   Since $P(x)=0 \iff x=0$, we have $b-P(P(b)) = 0$, so $P(P(b)) = b$.
+    *   This contradicts the assumption $P(P(b)) \neq b$.
+    *   Therefore, $P(P(x)) = x$ for all $x \in \mathbb{Q}$.
+    *   *Step 4 (Cauchy):*
+    *   Since $P(P(x))=x$, then $R(a,b) = P(a + P(b-P(a))) - b = 0$ implies $a + P(b-P(a)) = P(b)$, which is $L(a,b)=0$.
+    *   Thus $P(b-P(a)) = P(b) - a$ for all $a,b$.
+    *   Let $P(a) = y$, so $a = P(y)$. Then $P(b-y) = P(b) - P(y)$.
+    *   Since $P(0)=0$, setting $b=0 \implies P(-y) = -P(y)$.
+    *   Then $P(b+y) = P(b-(-y)) = P(b) - P(-y) = P(b) + P(y)$.
+
+3.  **The Gauntlet:**
+    *   **Veritas Pass 1:** Clean.
+    *   **Momus:** Now prove $P(x)=mx$ on $\mathbb{Q}$ explicitly to close the "self-contained" requirement.
+
+4.  **Verdict:** Finalizing the Cauchy extension to $\mathbb{Q}$ and the maximum size.
+
+---
+
+### **Part 2: Final Synthesis**
+
+**The Architect's Log (Hemingway Style):**
+We found the origin first. If the function does not pass through zero, it fails. We found that the function is its own inverse. We proved this by showing that any deviation from the reflection leads back to the reflection itself. This gave us additivity. On the rationals, additivity is a straight line. The line must be its own inverse, so the slope squared is one. In both cases, the sum of the opposites is zero. There is only one value in the set.
+
+**The Final Blueprint (Reviewer-Ready):**
+
+**Problem:**
+Let $P: \mathbb{Q} \to \mathbb{Q}$ be a function satisfying:
+\[ (P(b-P(a))+a-P(b))(P(a+P(b-P(a)))-b)=0 \]
+for all rational numbers $a,b$. Prove that the set $\{P(a)+P(-a):a\in\mathbb{Q}\}$ is a finite set, and find the maximum possible number of elements in this set.
+
+**Proof:**
+
+**1. Evaluation of $P(0)$**
+Let $P(0) = c$. Setting $a = 0$ in the original equation:
+\[ (P(b - c) - P(b))(P(P(b - c)) - b) = 0 \]
+Substitute $b = c$:
+\[ (P(0) - P(c))(P(P(0)) - c) = (c - P(c))(P(c) - c) = -(P(c) - c)^2 = 0 \implies P(c) = c. \]
+Substitute $b = 2c$ into the $a=0$ result:
+\[ (P(c) - P(2c))(P(P(c)) - 2c) = (c - P(2c))(c - 2c) = 0. \]
+If $c \neq 0$, then $c-2c = -c \neq 0$, which forces $P(2c) = c$.
+Now substitute $a = c$ and $b = 2c$ into the original equation:
+Factor 1: $P(2c - P(c)) + c - P(2c) = P(2c - c) + c - c = P(c) = c$.
+Factor 2: $P(c + P(2c - P(c))) - 2c = P(c + P(c)) - 2c = P(2c) - 2c = c - 2c = -c$.
+The product is $c(-c) = -c^2 = 0$, which implies $c = 0$. Thus, $P(0) = 0$.
+
+**2. Injectivity and Involution**
+With $P(0) = 0$, let $P(k) = 0$. Setting $a = k$ in the original equation:
+\[ (P(b) + k - P(b))(P(k + P(b)) - b) = k(P(k + P(b)) - b) = 0. \]
+If $k \neq 0$, then $P(k + P(b)) = b$ for all $b \in \mathbb{Q}$. Setting $b = 0 \implies P(k) = 0$. Setting $b = P(k) = 0 \implies P(k) = 0$. Furthermore, $P(k + P(k)) = k \implies P(k) = k \implies 0 = k$, a contradiction. Thus $P(x) = 0 \iff x = 0$.
+Now consider the original equation $L(a,b) \cdot R(a,b) = 0$, where:
+$L(a,b) = P(b - P(a)) + a - P(b)$
+$R(a,b) = P(a + P(b - P(a))) - b$
+Suppose there exists some $b$ such that $P(P(b)) \neq b$. 
+If $L(a,b) = 0$, then $P(b - P(a)) = P(b) - a$.
+Substituting this into $R$: $R = P(a + P(b) - a) - b = P(P(b)) - b \neq 0$.
+Since $L \cdot R = 0$, if $R \neq 0$, then $L$ must be $0$.
+Consequently, $P(P(b)) \neq b$ implies $L(a,b) = 0$ for all $a \in \mathbb{Q}$.
+Setting $a = P(b)$ in $L(a,b) = 0$ yields $P(b - P(P(b))) + P(b) - P(b) = P(b - P(P(b))) = 0$.
+Since $P(x) = 0 \iff x = 0$, we have $b - P(P(b)) = 0$, so $P(P(b)) = b$.
+This contradicts the assumption $P(P(b)) \neq b$. Thus, $P(P(x)) = x$ for all $x \in \mathbb{Q}$.
+
+**3. Cauchy’s Functional Equation**
+Since $P(P(x)) = x$, the equation $R(a,b) = 0$ becomes $P(a + P(b - P(a))) = b$. Applying $P$ to both sides gives $a + P(b - P(a)) = P(b)$, which is $L(a,b) = 0$.
+Thus $L(a,b) = 0$ for all $a, b$:
+\[ P(b - P(a)) = P(b) - a. \]
+Let $P(a) = y$. Since $P$ is an involution, $a = P(y)$.
+\[ P(b - y) = P(b) - P(y). \]
+For $b = 0$, $P(-y) = P(0) - P(y) = -P(y)$.
+Then $P(b + y) = P(b - (-y)) = P(b) - P(-y) = P(b) + P(y)$.
+We prove $P(x) = mx$ for $x \in \mathbb{Q}$ using $P(x + y) = P(x) + P(y)$:
+1. For $n \in \mathbb{N}$, $P(nx) = nP(x)$ by induction: $P((k+1)x) = P(kx) + P(x) = kP(x) + P(x) = (k+1)P(x)$.
+2. Since $P(-x) = -P(x)$, $P(nx) = nP(x)$ holds for all $n \in \mathbb{Z}$.
+3. For $q \in \mathbb{Z} \setminus \{0\}$, $P(1) = P(q \cdot \frac{1}{q}) = qP(\frac{1}{q}) \implies P(\frac{1}{q}) = \frac{1}{q}P(1)$.
+4. For $x = \frac{p}{q}$, $P(\frac{p}{q}) = pP(\frac{1}{q}) = \frac{p}{q}P(1)$.
+Let $P(1) = m$. Then $P(x) = mx$ for all $x \in \mathbb{Q}$.
+
+**4. Final Synthesis**
+Substituting $P(x) = mx$ into $P(P(x)) = x$:
+\[ m(mx) = x \implies m^2 = 1 \implies m = 1 \text{ or } m = -1. \]
+If $m = 1$, $P(a) + P(-a) = a + (-a) = 0$.
+If $m = -1$, $P(a) + P(-a) = -a + a = 0$.
+In all valid cases, $P(a) + P(-a) = 0$.
+The set $\{P(a) + P(-a) : a \in \mathbb{Q}\}$ is $\{0\}$.
+The set contains exactly 1 element.
+
+**Maximum number of elements: 1**

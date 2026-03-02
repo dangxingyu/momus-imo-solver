@@ -1,0 +1,32 @@
+**The Problem**
+Infinitely many boys and girls stand in a line alternatingly. $x_i$ is the number chosen by the $i$-th person. For $m > N$, $x_m = 1 + c_{m-2}(x_{m-1})$, where $c_k(v) = |\{i \in \{1, \dots, k\} : x_i = v\}|$. Prove that $\{b_n\} = \{x_{2n-1}\}$ or $\{g_n\} = \{x_{2n}\}$ is eventually periodic.
+
+**Proof**
+
+**1. Unboundedness and the Occurrence of 1**
+Let $\{x_m\}$ be the sequence of numbers. Suppose $\{x_m\}$ is bounded by $K$. By the Pigeonhole Principle, at least one value $v$ must appear infinitely often. Let $i_1, i_2, \dots$ be the indices where $x_{i_j} = v$. Then $x_{i_j+1} = 1 + c_{i_j-1}(v)$. As $j \to \infty$, $c_{i_j-1}(v)$ grows without bound, so $x_{i_j+1}$ eventually exceeds $K$, a contradiction. Thus, $\{x_m\}$ is unbounded.
+A value $x_m$ is "new" if $x_m \notin \{x_1, \dots, x_{m-1}\}$. Since $\{x_m\}$ is unbounded, there are infinitely many new values. For any $m > N$, if $x_{m-1}$ is a new value, $c_{m-2}(x_{m-1}) = 0$, so $x_m = 1 + 0 = 1$. Thus, the value 1 appears infinitely often.
+
+**2. Dominance of the Count of 1s**
+Let $D_k = \{x_1, \dots, x_k\}$ be the set of distinct values present in the first $k$ terms. From the definition of the recurrence, $c_k(1)$ increases by 1 every time a new value $v \in D_k \setminus D_{k-1}$ is introduced at index $k-1$. Thus, $c_k(1) \ge |D_{k-1}| - N$.
+Consider any value $v \in D_k \setminus \{1\}$. If $c_k(v) = L$, it implies $v$ appeared $L$ times. Each time $v$ appeared at an index $i$, the next term was $x_{i+1} = 1 + c_{i-1}(v)$. Thus, the sequence contains the values $1, 2, \dots, L$. This implies $\{1, 2, \dots, L\} \subseteq D_k$, so $|D_k| \ge L$.
+Consequently, $c_k(1) \ge c_k(v) - (N+1)$ for any $v \in D_k$. This demonstrates that the count of ones is always within a constant of the maximum count of any other value in the sequence.
+
+**3. The New Value Threshold**
+Let $H_k = \max \{x_1, \dots, x_k\}$. Since each $x_j = 1 + c_{j-2}(x_{j-1})$, we have $H_k \le 1 + \max_{v} c_{k-2}(v)$.
+From the previous step, $\max_{v} c_{k-2}(v) \le c_{k-2}(1) + (N+1)$.
+Substituting this into the inequality for $H_k$, we obtain $H_k \le c_{k-2}(1) + N + 2$.
+As $\{x_m\}$ is unbounded, $c_k(1)$ grows without bound. Eventually, there exists an index $m-1$ such that $x_{m-1}=1$ and $1 + c_{m-2}(1) > H_{m-1}$.
+
+**4. Parity Locking and Periodicity**
+Suppose at index $m-1 > N$, we have $x_{m-1} = 1$ and $1 + c_{m-2}(1) > H_{m-1}$. Let $v_{new} = 1 + c_{m-2}(1)$.
+Then $x_m = v_{new}$. Since $v_{new} > H_{m-1}$, $v_{new}$ is a new value.
+It follows that $x_{m+1} = 1 + c_{m-1}(v_{new}) = 1 + 0 = 1$.
+Now consider $x_{m+2} = 1 + c_m(1)$.
+Since $x_{m-1}=1$ and $x_{m+1}=1$, we have $c_m(1) = c_{m-2}(1) + 1$.
+Thus $x_{m+2} = 1 + (c_{m-2}(1) + 1) = v_{new} + 1$.
+Since $v_{new}$ was the maximum value at index $m$, $v_{new} + 1$ is a new value at index $m+2$.
+This implies $x_{m+3} = 1 + c_{m+1}(v_{new}+1) = 1 + 0 = 1$.
+By induction, for all $j \ge 0$, $x_{m-1+2j} = 1$.
+The subsequence $\{x_{m-1}, x_{m+1}, x_{m+3}, \dots\}$ is constant 1.
+If $m-1$ is odd, $\{b_n\}$ is eventually periodic. If $m-1$ is even, $\{g_n\}$ is eventually periodic.

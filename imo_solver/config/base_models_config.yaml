@@ -1,0 +1,45 @@
+# Base Models Configuration (Gemini Native Only)
+# This repository intentionally supports native Gemini models only.
+
+models:
+  gemini-2.5-pro-native:
+    gemini_model: "gemini-2.5-pro"
+    provider: gemini
+    default_params:
+      temperature: 0.1
+      top_p: 1.0
+      max_tokens: 65536
+      thinking_budget: 32768
+
+  gemini-2.5-flash-native:
+    gemini_model: "gemini-2.5-flash"
+    provider: gemini
+    default_params:
+      temperature: 0.2
+      top_p: 1.0
+      max_tokens: 65536
+
+  gemini-2.5-flash-no-thinking:
+    gemini_model: "gemini-2.5-flash"
+    provider: gemini
+    default_params:
+      temperature: 0.0
+      top_p: 1.0
+      max_tokens: 2048
+      thinking_budget: 0
+
+  gemini-3-pro:
+    gemini_model: "gemini-3-pro-preview"
+    provider: gemini
+    default_params:
+      temperature: 0.4
+      max_tokens: 65536
+      thinking_budget: 32768
+
+  gemini-3-flash:
+    gemini_model: "gemini-3-flash-preview"
+    provider: gemini
+    default_params:
+      temperature: 0.4
+      max_tokens: 32768
+      thinking_budget: 16384

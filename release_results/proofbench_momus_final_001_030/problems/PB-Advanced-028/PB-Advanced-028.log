@@ -1,0 +1,1183 @@
+
+================================================================================
+Momus Batch Run: PB-Advanced-028
+Config: imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml
+Started: 2026-03-01T04:01:35.757435
+================================================================================
+
+================================================================================
+HYPERPARAMETERS & CONFIGURATION
+================================================================================
+Agent Type: MomusAgent
+Config File: imo_solver/config/momus_exp_gemini3_flash_depth3_config.yaml
+Prompts File: imo_solver/prompts/momus_prompts.yaml
+Base Models File: Auto-detected
+Log File: release_results/proofbench_momus_final_001_030/problems/PB-Advanced-028/PB-Advanced-028.log
+
+Execution Settings:
+  num_parallel_solvers: 4
+  max_solver_grader_rounds: 2
+  min_grade_for_phase2: 5
+  num_top_solutions: 2
+  max_verification_rounds: 1
+  conjecture_grade_threshold: 5
+  num_final_parallel_solvers: 5
+  max_outer_loops: 3
+  success_threshold: 7
+  rule2_verification_count: 3
+  enable_post_enhancement: True
+  post_enhancement_trigger_count: 3
+  post_enhancement_min_grade: 1
+  min_solutions_at_target: 3
+  target_grade: 6
+  num_rewriters: 2
+  conjecture_proven_threshold: 6
+  num_final_solvers: 3
+
+Retry Settings:
+  max_retries: 5
+  base_delay: 1.0
+  exponential_backoff: True
+
+Logging Settings:
+  verbose: True
+  log_api_requests: True
+  log_sessions: True
+  log_conjecture_extraction: True
+  log_verification: True
+================================================================================
+
+
+================================================================================
+MOMUS CORE AGENT INITIALIZED
+================================================================================
+Phase 1 - Parallel solvers: 4
+Phase 1 - Max S-G rounds: 2
+Phase 2 - Top solutions: 2
+Phase 2 - Max verification rounds: 1
+Phase 3 - Final parallel solvers: 5
+Max outer loops: 3
+Success threshold: 7/7
+Rule 2 verifications: 3
+================================================================================
+
+================================================================================
+MOMUS BASE AGENT INITIALIZED
+================================================================================
+
+================================================================================
+MOMUS AGENT INITIALIZED
+================================================================================
+Rule 2 verifications: 3 (improved from base pipeline)
+Post-enhancement enabled: True
+Post-enhancement trigger: 3 independent grades
+Post-enhancement min grade: 1/7
+================================================================================
+
+Running Momus Agent on PB-Advanced-028...
+Problem:
+Let $H$ be the orthocenter of acute triangle $ABC$, let $F$ be
+ the foot of the altitude from $C$ to $AB$, and let $P$ be the reflection
+ of $H$ across $BC$. Suppose that the circumcircle of triangle $AFP$
+ intersects line $BC$ at two distinct points $X$ and $Y$. Prove
+ that $C$ is the midpoint of $XY$.
+
+
+================================================================================
+MOMUS PIPELINE START
+================================================================================
+
+>>> PHASE 1-3: Running base pipeline Base Pipeline
+
+================================================================================
+STARTING MOMUS CORE PIPELINE
+================================================================================
+Problem:
+Let $H$ be the orthocenter of acute triangle $ABC$, let $F$ be
+ the foot of the altitude from $C$ to $AB$, and let $P$ be the reflection
+ of $H$ across $BC$. Suppose that the circumcircle of triangle $AFP$
+ intersects line $BC$ at two distinct points $X$ and $Y$. Prove
+ that $C$ is the midpoint of $XY$.
+
+
+================================================================================
+PHASE 1: SOLVER-GRADER LOOP (base pipeline)
+================================================================================
+
+======================================================================
+SOLVER-GRADER ROUND 1/2
+======================================================================
+
+======================================================================
+STEP 1: PARALLEL INITIAL SOLVING (K=4)
+======================================================================
+Using model: gemini-3-flash-preview
+
+Launching 4 solvers in parallel...
+
+[Solver 1] Starting...
+
+[Solver 2] Starting...
+
+[Solver 3] Starting...
+
+[Solver 4] Starting...
+
+======================================================================
+API CALL #1 [Step 1 - Solver 3/4] - solver
+======================================================================
+Prompt: 354 chars
+Response: 10964 chars
+
+ Token Usage:
+  Prompt tokens:      1429
+  Output tokens:      4245
+  Thinking tokens:    10863
+  Total tokens:       16537
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #2 [Step 1 - Solver 2/4] - solver
+======================================================================
+Prompt: 354 chars
+Response: 9790 chars
+
+ Token Usage:
+  Prompt tokens:      1429
+  Output tokens:      4214
+  Thinking tokens:    12466
+  Total tokens:       18109
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #3 [Step 1 - Solver 1/4] - solver
+======================================================================
+Prompt: 354 chars
+Response: 9495 chars
+
+ Token Usage:
+  Prompt tokens:      1429
+  Output tokens:      4048
+  Thinking tokens:    13949
+  Total tokens:       19426
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #4 [Step 1 - Solver 4/4] - solver
+======================================================================
+Prompt: 354 chars
+Response: 10515 chars
+
+ Token Usage:
+  Prompt tokens:      1429
+  Output tokens:      4573
+  Thinking tokens:    14682
+  Total tokens:       20684
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 9 chars, Thoughts: 10234 tokens, Output: 4 tokens, Total: 14564 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Solver 3] ✓ Generated and improved (10964 chars)
+[Gemini Response] Text: 1064 chars, Thoughts: 11157 tokens, Output: 273 tokens, Total: 15725 tokens
+  ✓ Found issues (1064 chars of comments)
+  Asking solver to regenerate proof...
+[Gemini Response] Text: 870 chars, Thoughts: 9808 tokens, Output: 230 tokens, Total: 14167 tokens
+  ✓ Found issues (870 chars of comments)
+  Asking solver to regenerate proof...
+[Gemini Response] Text: 1162 chars, Thoughts: 13117 tokens, Output: 291 tokens, Total: 18062 tokens
+  ✓ Found issues (1162 chars of comments)
+  Asking solver to regenerate proof...
+
+======================================================================
+API CALL #5 [Rule 1 - Regenerate Proof] - solver
+======================================================================
+Prompt: 1309 chars
+Response: 9480 chars
+
+ Token Usage:
+  Prompt tokens:      5977
+  Output tokens:      4089
+  Thinking tokens:    2228
+  Total tokens:       12294
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  ✓ Proof regenerated (9480 chars)
+[Solver 2] ✓ Generated and improved (9480 chars)
+
+======================================================================
+API CALL #6 [Rule 1 - Regenerate Proof] - solver
+======================================================================
+Prompt: 1115 chars
+Response: 9211 chars
+
+ Token Usage:
+  Prompt tokens:      5768
+  Output tokens:      4116
+  Thinking tokens:    2675
+  Total tokens:       12559
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  ✓ Proof regenerated (9211 chars)
+[Solver 1] ✓ Generated and improved (9211 chars)
+
+======================================================================
+API CALL #7 [Rule 1 - Regenerate Proof] - solver
+======================================================================
+Prompt: 1407 chars
+Response: 10346 chars
+
+ Token Usage:
+  Prompt tokens:      6354
+  Output tokens:      4954
+  Thinking tokens:    3368
+  Total tokens:       14676
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  ✓ Proof regenerated (10346 chars)
+[Solver 4] ✓ Generated and improved (10346 chars)
+
+Step 1 complete: 4/4 solutions generated
+
+======================================================================
+STEP 2/4/11: PARALLEL GRADING
+======================================================================
+
+Launching 4 graders in parallel...
+[Grader 1] Starting...
+[Grader 2] Starting...
+  ✓ Extracted Final Blueprint (4203 chars from 9211 chars)
+[Grader 3] Starting...
+  ✓ Extracted Final Blueprint (3491 chars from 9480 chars)
+[Grader 4] Starting...
+  ✓ Extracted Final Blueprint (3322 chars from 10964 chars)
+  ✓ Extracted Final Blueprint (3699 chars from 10346 chars)
+
+======================================================================
+API CALL #8 [Parallel Grade 1] - grader
+======================================================================
+Prompt: 4586 chars
+Response: 3583 chars
+
+ Token Usage:
+  Prompt tokens:      3222
+  Output tokens:      957
+  Thinking tokens:    2322
+  Total tokens:       6501
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 1] Grade: 7/7
+
+======================================================================
+API CALL #9 [Parallel Grade 2] - grader
+======================================================================
+Prompt: 3874 chars
+Response: 3301 chars
+
+ Token Usage:
+  Prompt tokens:      2728
+  Output tokens:      862
+  Thinking tokens:    3588
+  Total tokens:       7178
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 2] Grade: 7/7
+
+======================================================================
+API CALL #10 [Parallel Grade 3] - grader
+======================================================================
+Prompt: 3705 chars
+Response: 3348 chars
+
+ Token Usage:
+  Prompt tokens:      2532
+  Output tokens:      890
+  Thinking tokens:    7848
+  Total tokens:       11270
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 3] Grade: 7/7
+
+======================================================================
+API CALL #11 [Parallel Grade 4] - grader
+======================================================================
+Prompt: 4082 chars
+Response: 3758 chars
+
+ Token Usage:
+  Prompt tokens:      3079
+  Output tokens:      1022
+  Thinking tokens:    29041
+  Total tokens:       33142
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 4] Grade: 4/7
+
+Grading complete: [7, 7, 7, 4]
+  ✓ Extracted Final Blueprint (4203 chars from 9211 chars)
+  ✓ Extracted Final Blueprint (3491 chars from 9480 chars)
+  ✓ Extracted Final Blueprint (3322 chars from 10964 chars)
+  ✓ Extracted Final Blueprint (3699 chars from 10346 chars)
+
+Round 1 - Max grade: 7/7
+✓ Perfect score detected in round 1
+
+================================================================================
+PERFECT SCORE DETECTED - TRIGGERING RULE 2 VERIFICATION
+================================================================================
+
+======================================================================
+RULE 2: DOUBLE VERIFICATION (2 Independent Graders)
+======================================================================
+  ✓ Extracted Final Blueprint (4203 chars from 9211 chars)
+
+[Verifier 1] Starting...
+
+[Verifier 2] Starting...
+
+[Verifier 3] Starting...
+
+======================================================================
+API CALL #12 [Rule 2 - Verification 2/3] - grader
+======================================================================
+Prompt: 4586 chars
+Response: 3649 chars
+
+ Token Usage:
+  Prompt tokens:      3222
+  Output tokens:      959
+  Thinking tokens:    7882
+  Total tokens:       12063
+  Cached tokens:      2031
+--------------------------------------------------------------------------------
+
+[Verifier 2] Score: 7/7
+
+======================================================================
+API CALL #13 [Rule 2 - Verification 3/3] - grader
+======================================================================
+Prompt: 4586 chars
+Response: 3544 chars
+
+ Token Usage:
+  Prompt tokens:      3222
+  Output tokens:      963
+  Thinking tokens:    12317
+  Total tokens:       16502
+  Cached tokens:      2031
+--------------------------------------------------------------------------------
+
+[Verifier 3] Score: 7/7
+
+======================================================================
+API CALL #14 [Rule 2 - Verification 1/3] - grader
+======================================================================
+Prompt: 4586 chars
+Response: 3903 chars
+
+ Token Usage:
+  Prompt tokens:      3222
+  Output tokens:      975
+  Thinking tokens:    13235
+  Total tokens:       17432
+  Cached tokens:      2031
+--------------------------------------------------------------------------------
+
+[Verifier 1] Score: 6/7
+
+✗ RULE 2 FAILED: Scores [6, 7, 7] (need all 7s)
+
+✗ Rule 2 verification failed, treating as partial solution
+
+################################################################################
+OUTER LOOP 1/3
+################################################################################
+
+================================================================================
+PHASE 2: EXTRACTION & RECURSIVE VERIFICATION (Loop 1)
+================================================================================
+
+======================================================================
+STEP 6: CONJECTURE EXTRACTION
+======================================================================
+Extracting conjectures...
+
+======================================================================
+API CALL #15 [Step 6 - Conjecture Extraction] - conjecture_extractor
+======================================================================
+Prompt: 27654 chars
+Response: 6062 chars
+
+ Token Usage:
+  Prompt tokens:      11892
+  Output tokens:      1995
+  Thinking tokens:    12791
+  Total tokens:       26678
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+API CALL #16 [Step 6 - Self-Contained Follow-up] - conjecture_extractor
+======================================================================
+Prompt: 330 chars
+Response: 5942 chars
+
+ Token Usage:
+  Prompt tokens:      13961
+  Output tokens:      1997
+  Thinking tokens:    2807
+  Total tokens:       18765
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  Using LLM parser for conjecture extraction...
+
+======================================================================
+API CALL #17 [Step 6 - LLM Conjecture Parser] - conjecture_parser
+======================================================================
+Prompt: 514 chars
+Response: 4462 chars
+
+ Token Usage:
+  Prompt tokens:      2338
+  Output tokens:      1648
+  Thinking tokens:    1739
+  Total tokens:       5725
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+  ✓ LLM parser extracted 1 conjectures, 1 negations
+✓ Extracted 1 conjectures, 1 negations
+
+======================================================================
+STEP 7: QUALITY CONTROL (Self-Contained Check)
+======================================================================
+
+Checking conjecture 1/1...
+  Checking self-containment...
+
+[Role: quality_checker]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 8192 tokens, Output budget: 8192 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 8192,
+  "thinking_config": {
+    "thinking_budget": 8192
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 4 chars, Thoughts: 1548 tokens, Output: 1 tokens, Total: 2073 tokens
+✓ Conjecture 1 passed quality control
+
+Step 7 complete: 1/1 conjectures validated
+
+======================================================================
+STEP 8: RECURSIVE VERIFICATION (Individual)
+======================================================================
+
+Launching 2 verification tasks in parallel...
+[NC1] Solving...
+[C1] Solving...
+
+======================================================================
+API CALL #18 [Verify C1 - Solve] - solver
+======================================================================
+Prompt: 614 chars
+Response: 10556 chars
+
+ Token Usage:
+  Prompt tokens:      1512
+  Output tokens:      4422
+  Thinking tokens:    1897
+  Total tokens:       7831
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 9 chars, Thoughts: 2219 tokens, Output: 4 tokens, Total: 6726 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+  ✓ Extracted Final Blueprint (3676 chars from 10556 chars)
+[C1] Grading...
+
+======================================================================
+API CALL #19 [Verify C1 - Grade] - grader
+======================================================================
+Prompt: 4319 chars
+Response: 3779 chars
+
+ Token Usage:
+  Prompt tokens:      2833
+  Output tokens:      1048
+  Thinking tokens:    2522
+  Total tokens:       6403
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[C1] Grade: 7/7
+
+======================================================================
+API CALL #20 [Verify NC1 - Solve] - solver
+======================================================================
+Prompt: 591 chars
+Response: 9214 chars
+
+ Token Usage:
+  Prompt tokens:      1502
+  Output tokens:      3946
+  Thinking tokens:    34420
+  Total tokens:       39868
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 9 chars, Thoughts: 4651 tokens, Output: 4 tokens, Total: 8682 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+  ✓ Extracted Final Blueprint (3259 chars from 9214 chars)
+[NC1] Grading...
+
+======================================================================
+API CALL #21 [Verify NC1 - Grade] - grader
+======================================================================
+Prompt: 3879 chars
+Response: 3771 chars
+
+ Token Usage:
+  Prompt tokens:      2769
+  Output tokens:      1064
+  Thinking tokens:    9284
+  Total tokens:       13117
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[NC1] Grade: 7/7
+
+Resolving conflicts and selecting proven lemmas...
+
+  C1: Positive grade 7, Negative grade 7
+    ⚠ CONFLICT DETECTED: Both proven (hallucination) - storing as conflicting attempt
+
+Conflict resolution complete: 0 proven lemmas
+
+Total accumulated lemmas: 0
+
+================================================================================
+PHASE 3: INTEGRATION & FINAL SOLVING (Loop 1)
+================================================================================
+
+======================================================================
+STEP 10: FINAL PARALLEL SOLVING (With Proven Lemmas)
+======================================================================
+
+No proven lemmas available
+
+Using 4 previous solutions for reference
+[MOMUS] _final_parallel_solve: no proven lemmas provided
+[MOMUS] Added 1 conflicting attempt(s) as 'Student's attempted solution'
+
+[MOMUS] Injecting into final solver: best previous solution (grade 7/7 (Phase 1)) in Additional Materials (base pipeline.1 tie-break enabled)
+
+Launching 5 final solvers in parallel (4 with previous outer-loop best, 1 without for diversity)...
+
+[Final Solver 1] Starting...
+
+[Final Solver 2] Starting...
+
+[Final Solver 3] Starting...
+
+[Final Solver 4] Starting...
+
+[Final Solver 5] Starting...
+
+======================================================================
+API CALL #22 [Step 10 - Final Solver 1] - solver
+======================================================================
+Prompt: 29544 chars
+Response: 8207 chars
+
+ Token Usage:
+  Prompt tokens:      13311
+  Output tokens:      3195
+  Thinking tokens:    5482
+  Total tokens:       21988
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #23 [Step 10 - Final Solver 3] - solver
+======================================================================
+Prompt: 29544 chars
+Response: 9471 chars
+
+ Token Usage:
+  Prompt tokens:      13311
+  Output tokens:      4122
+  Thinking tokens:    4451
+  Total tokens:       21884
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #24 [Step 10 - Final Solver 5] - solver
+======================================================================
+Prompt: 29544 chars
+Response: 8521 chars
+
+ Token Usage:
+  Prompt tokens:      13311
+  Output tokens:      3370
+  Thinking tokens:    6293
+  Total tokens:       22974
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+
+======================================================================
+API CALL #25 [Step 10 - Final Solver 4] - solver
+======================================================================
+Prompt: 29544 chars
+Response: 8297 chars
+
+ Token Usage:
+  Prompt tokens:      13311
+  Output tokens:      3312
+  Thinking tokens:    6149
+  Total tokens:       22772
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 9 chars, Thoughts: 1623 tokens, Output: 4 tokens, Total: 4903 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Final Solver 1] ✓ Generated and refined (8207 chars)
+[Gemini Response] Text: 9 chars, Thoughts: 3204 tokens, Output: 4 tokens, Total: 6601 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Final Solver 4] ✓ Generated and refined (8297 chars)
+[Gemini Response] Text: 9 chars, Thoughts: 4361 tokens, Output: 4 tokens, Total: 7816 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Final Solver 5] ✓ Generated and refined (8521 chars)
+[Gemini Response] Text: 9 chars, Thoughts: 4952 tokens, Output: 4 tokens, Total: 9159 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Final Solver 3] ✓ Generated and refined (9471 chars)
+
+======================================================================
+API CALL #26 [Step 10 - Final Solver 2] - solver
+======================================================================
+Prompt: 29544 chars
+Response: 9602 chars
+
+ Token Usage:
+  Prompt tokens:      13311
+  Output tokens:      4261
+  Thinking tokens:    14225
+  Total tokens:       31797
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+
+======================================================================
+RULE 1: ANSWER-PROCESSOR (Scan & Regenerate)
+======================================================================
+  Scanning proof for lazy phrases...
+
+[Role: answer_processor]
+Provider: gemini
+Using Gemini model: gemini-3-flash-preview
+[Gemini Direct] Thinking budget: 16384 tokens, Output budget: 16384 tokens
+
+[Gemini Request - Attempt 1]
+Model: gemini-3-flash-preview
+Parameters: {
+  "temperature": 1.0,
+  "maxOutputTokens": 16384,
+  "thinking_config": {
+    "thinking_budget": 16384
+  }
+}
+Timeouts: connect=20.0s, read=300.0s
+[Gemini Response] Text: 9 chars, Thoughts: 9490 tokens, Output: 4 tokens, Total: 13836 tokens
+  ✓ NO_ISSUES detected - skipping regeneration
+[Final Solver 2] ✓ Generated and refined (9602 chars)
+
+Step 10 complete: 5/5 solutions generated
+
+======================================================================
+STEP 11: FINAL GRADING LOOP
+======================================================================
+
+======================================================================
+STEP 2/4/11: PARALLEL GRADING
+======================================================================
+
+Launching 5 graders in parallel...
+[Grader 1] Starting...
+  ✓ Extracted Final Blueprint (3404 chars from 8207 chars)
+[Grader 2] Starting...
+[Grader 3] Starting...
+  ✓ Extracted Final Blueprint (4012 chars from 9602 chars)
+[Grader 4] Starting...
+  ✓ Extracted Final Blueprint (3755 chars from 9471 chars)
+[Grader 5] Starting...
+  ✓ Extracted Final Blueprint (3103 chars from 8297 chars)
+  ✓ Extracted Final Blueprint (3205 chars from 8521 chars)
+
+======================================================================
+API CALL #27 [Parallel Grade 3] - grader
+======================================================================
+Prompt: 4138 chars
+Response: 3363 chars
+
+ Token Usage:
+  Prompt tokens:      2887
+  Output tokens:      872
+  Thinking tokens:    2119
+  Total tokens:       5878
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 3] Grade: 7/7
+
+======================================================================
+API CALL #28 [Parallel Grade 4] - grader
+======================================================================
+Prompt: 3486 chars
+Response: 3537 chars
+
+ Token Usage:
+  Prompt tokens:      2492
+  Output tokens:      938
+  Thinking tokens:    2046
+  Total tokens:       5476
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 4] Grade: 7/7
+
+======================================================================
+API CALL #29 [Parallel Grade 5] - grader
+======================================================================
+Prompt: 3588 chars
+Response: 3569 chars
+
+ Token Usage:
+  Prompt tokens:      2547
+  Output tokens:      932
+  Thinking tokens:    4013
+  Total tokens:       7492
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 5] Grade: 7/7
+
+======================================================================
+API CALL #30 [Parallel Grade 2] - grader
+======================================================================
+Prompt: 4395 chars
+Response: 3827 chars
+
+ Token Usage:
+  Prompt tokens:      3103
+  Output tokens:      1008
+  Thinking tokens:    6065
+  Total tokens:       10176
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 2] Grade: 7/7
+
+======================================================================
+API CALL #31 [Parallel Grade 1] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3501 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      896
+  Thinking tokens:    6423
+  Total tokens:       9906
+  Cached tokens:      0
+--------------------------------------------------------------------------------
+
+[Grader 1] Grade: 7/7
+
+Grading complete: [7, 7, 7, 7, 7]
+
+Final max grade: 7/7
+  ✓ Extracted Final Blueprint (3404 chars from 8207 chars)
+  ✓ Extracted Final Blueprint (4012 chars from 9602 chars)
+  ✓ Extracted Final Blueprint (3755 chars from 9471 chars)
+  ✓ Extracted Final Blueprint (3103 chars from 8297 chars)
+  ✓ Extracted Final Blueprint (3205 chars from 8521 chars)
+[MOMUS] Tracked 5 Phase 3 solution(s) with 0 conjecture(s) used
+Updated solutions for next iteration: 5 solutions
+✓ New best solution: grade 7/7 (loop 1)
+
+================================================================================
+PERFECT SCORE IN LOOP 1 - TRIGGERING RULE 2 VERIFICATION
+================================================================================
+
+======================================================================
+RULE 2: DOUBLE VERIFICATION (2 Independent Graders)
+======================================================================
+  ✓ Extracted Final Blueprint (3404 chars from 8207 chars)
+
+[Verifier 1] Starting...
+
+[Verifier 2] Starting...
+
+[Verifier 3] Starting...
+
+======================================================================
+API CALL #32 [Rule 2 - Verification 1/3] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3815 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      1035
+  Thinking tokens:    4333
+  Total tokens:       7955
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+[Verifier 1] Score: 7/7
+
+======================================================================
+API CALL #33 [Rule 2 - Verification 3/3] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3898 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      978
+  Thinking tokens:    4916
+  Total tokens:       8481
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+[Verifier 3] Score: 7/7
+
+======================================================================
+API CALL #34 [Rule 2 - Verification 2/3] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 4141 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      1117
+  Thinking tokens:    10553
+  Total tokens:       14257
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+[Verifier 2] Score: 7/7
+
+✓ RULE 2 PASSED: All 3 verifications returned 7/7
+
+✓ RULE 2 VERIFICATION PASSED - SUCCESS!
+
+================================================================================
+base pipeline PIPELINE COMPLETE - CHECKING POST-ENHANCEMENT
+================================================================================
+
+>>> PHASE 4: Post-Enhancement Check
+Running 3 independent evaluations...
+
+Running 3 independent grades...
+  ✓ Extracted Final Blueprint (3404 chars from 8207 chars)
+
+[Independent Grade 1/3]
+
+======================================================================
+API CALL #35 [Post-Enhancement Check - Grade 1] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3715 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      1040
+  Thinking tokens:    4073
+  Total tokens:       7700
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+[Independent Grade 2/3]
+
+======================================================================
+API CALL #36 [Post-Enhancement Check - Grade 2] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3860 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      1005
+  Thinking tokens:    4700
+  Total tokens:       8292
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+[Independent Grade 3/3]
+
+======================================================================
+API CALL #37 [Post-Enhancement Check - Grade 3] - grader
+======================================================================
+Prompt: 3787 chars
+Response: 3343 chars
+
+ Token Usage:
+  Prompt tokens:      2587
+  Output tokens:      886
+  Thinking tokens:    2306
+  Total tokens:       5779
+  Cached tokens:      2027
+--------------------------------------------------------------------------------
+
+  Grade: 7/7
+
+✗ POST-ENHANCEMENT NOT TRIGGERED
+All 3 grades = 7/7
+Solution is already perfect
+
+✓ Solution is perfect (all grades 7/7) - no enhancement needed
+
+================================================================================
+RESULT: SolutionStatus.SOLVED
+Duration: 1196.4s
+================================================================================

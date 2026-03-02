@@ -1,0 +1,55 @@
+**The Problem:**
+Let $H$ be the orthocenter of an acute-angled triangle $ABC$, and let $D, E, F$ be the feet of the altitudes from vertices $A, B, C$ to the opposite sides, respectively. Let $G$ be the midpoint of $BC$. Let $I, J$ be the feet of the perpendiculars from $B, C$ to $AG$, respectively. Let $K (\neq D)$ be the second intersection of the circumcircles of triangle $DIF$ and triangle $DJE$. Let $M$ be the midpoint of segment $AH$. Let $L$ be the foot of the perpendicular from $M$ to $AG$. Let $R (\neq G)$ be the second intersection of the circumcircle of triangle $AHG$ with $BC$. Let $S$ be the intersection of line $AH$ and $EF$. Let $N$ be the foot of the perpendicular from point $D$ to $RS$. Let $O$ be the midpoint of segment $DN$. Let line $DN$ intersect the circumcircle of triangle $DKL$ again at point $P (\neq D)$. Let $Q (\neq C)$ be the second intersection of the circumcircle of triangle $OCP$ and line $BC$. Prove that $AB=AQ$.
+
+---
+
+### **Proof:**
+
+**1. Coordinate Assignment**
+Let $D$ be the origin $(0,0)$. Let line $BC$ be the $x$-axis and altitude $AD$ be the $y$-axis.
+Define vertices: $A(0, a)$, $B(-b, 0)$, and $C(c, 0)$, where $a, b, c > 0$.
+The orthocenter $H$ lies on the $y$-axis. The slope of $AC$ is $-a/c$. Since $BH \perp AC$, the slope of $BH$ is $c/a$. The equation of line $BH$ is $y - 0 = \frac{c}{a}(x + b)$. Setting $x=0$ yields the $y$-coordinate of $H$: $h = bc/a$. Thus, $H = (0, bc/a)$, satisfying $ah = bc$.
+Midpoints: $G = (g, 0)$ where $g = \frac{c-b}{2}$. $M = (0, m)$ where $m = \frac{a+h}{2} = \frac{a^2+bc}{2a}$.
+
+**2. Point $S$ and the Line $EF$**
+The line $AB$ is $ax - by = -ab$. Altitude $CF \perp AB$ through $C(c, 0)$ is $bx + ay = bc$. Solving the system:
+$(a^2+b^2)x = b(bc - a^2)$ and $(a^2+b^2)y = ab(b + c)$.
+Thus, $F = \left(\frac{b(bc - a^2)}{a^2+b^2}, \frac{ab(b+c)}{a^2+b^2}\right)$. Similarly, $E = \left(\frac{c(a^2 - bc)}{a^2+c^2}, \frac{ac(b+c)}{a^2+c^2}\right)$.
+Point $S$ is the $y$-intercept of line $EF$. Calculating the intercept $y_S = \frac{x_E y_F - x_F y_E}{x_E - x_F}$:
+The numerator is $\frac{2abc(b+c)(a^2-bc)}{(a^2+b^2)(a^2+c^2)}$ and the denominator is $\frac{(a^2-bc)(b+c)(a^2+bc)}{(a^2+b^2)(a^2+c^2)}$.
+Dividing gives $y_S = \frac{2abc}{a^2+bc} = \frac{2abc}{2am} = \frac{bc}{m}$. Thus, $S = (0, bc/m)$.
+
+**3. Point $R$ and Line $RS$**
+The power of $D(0,0)$ with respect to $\odot(AHG)$ is $DA \cdot DH = a \cdot h = bc$.
+Since $G(g,0)$ and $R(x_R, 0)$ are on the $x$-axis, $DG \cdot DR = g \cdot x_R = bc \implies x_R = bc/g$.
+The equation of line $RS$ passing through $(bc/g, 0)$ and $(0, bc/m)$ is $gx + my = bc$.
+
+**4. Points $N$ and $O$**
+Line $DN \perp RS$ through $(0,0)$ is $mx - gy = 0$. The intersection $N$ of $gx+my=bc$ and $y = \frac{m}{g}x$ is:
+$g^2x + m^2x = gbc \implies x_N = \frac{gbc}{g^2+m^2}$ and $y_N = \frac{mbc}{g^2+m^2}$.
+$O$ is the midpoint of $DN$, so $O = \left(\frac{gbc}{2(g^2+m^2)}, \frac{mbc}{2(g^2+m^2)}\right)$.
+
+**5. Point $K$ and Circle $\odot(DKL)$**
+$I$ and $J$ are projections of $B, C$ on $AG$. Since $\angle BDA = \angle BIA = 90^\circ$, points $D, I, A, B$ are concyclic. Thus, the power of $A$ with respect to $\odot(DIF)$ is $Pow_1(A) = AF \cdot AB = (a^2-bc)$. Since $K$ is on the radical axis of $\odot(DIF)$ and $\odot(DJE)$, and $A$ shares equal power to both ($Pow_2(A) = AE \cdot AC = a^2-bc$), $A, D, K$ are collinear. Since $AD$ is the $y$-axis, $K = (0, y_K)$.
+$Pow_1(A) = AD \cdot AK = a(a - y_K) = a^2 - bc \implies y_K = bc/a = h$. Thus, $K = H$.
+Point $L$ is the projection of $M(0,m)$ on $AG$ ($ax+gy=ag$):
+$x_L = \frac{ag(a-m)}{a^2+g^2}$, $y_L = \frac{a(g^2+am)}{a^2+g^2}$.
+The circle $\odot(DKL)$ (passing through $D(0,0)$ and $K(0,h)$) has the form $x^2 + y^2 + Dx + Ey = 0$.
+Since $(0,h)$ is on the circle, $h^2 + Eh = 0 \implies E = -h = -(2m-a)$.
+Substituting $L$ into the equation to find $D$:
+$D = \frac{-(x_L^2+y_L^2) - Ey_L}{x_L} = \dots = -\frac{2g^2+am}{g}$.
+
+**6. Point $P$ and Power of $D$**
+$P$ is the intersection of $DN$ ($y = \frac{m}{g}x$) and $\odot(DKL)$. Substituting $y$:
+$x^2(1 + \frac{m^2}{g^2}) - x(\frac{2g^2+am}{g} + \frac{m(2m-a)}{g}) = 0$.
+Solving for $x$ gives $x_P = 2g$, and $y_P = \frac{m}{g}(2g) = 2m$.
+The power of $D(0,0)$ with respect to $\odot(OCP)$ is $DO \cdot DP$.
+$|DP| = \sqrt{(2g)^2 + (2m)^2} = 2\sqrt{g^2+m^2}$.
+$|DO| = \frac{1}{2}|DN| = \frac{1}{2}\sqrt{x_N^2 + y_N^2} = \frac{bc}{2\sqrt{g^2+m^2}}$.
+$\text{Power}(D) = \frac{bc}{2\sqrt{g^2+m^2}} \cdot 2\sqrt{g^2+m^2} = bc$.
+
+**7. Final Conclusion**
+$Q$ lies on $\odot(OCP)$ and the $x$-axis. The power of $D$ is $DC \cdot DQ = c \cdot DQ = bc \implies DQ = b$.
+In $\triangle ABD$, $AB^2 = AD^2 + BD^2 = a^2 + b^2$.
+In $\triangle AQD$, $AQ^2 = AD^2 + DQ^2 = a^2 + b^2$.
+Thus, $AB = AQ$.
